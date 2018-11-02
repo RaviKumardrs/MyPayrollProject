@@ -46,5 +46,32 @@ namespace PayrollApplication
         {
             this.Close();
         }
+
+        bool IsNumberOrBackspace;
+        private void txtEmployeeId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsNumberOrBackspace = false;
+            if(char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            {
+                IsNumberOrBackspace = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsNumberOrBackspace = false;
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            {
+                IsNumberOrBackspace = true;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

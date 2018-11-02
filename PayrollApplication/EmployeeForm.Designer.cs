@@ -112,7 +112,7 @@
             this.grpEmployeeContactDetails.Location = new System.Drawing.Point(402, 53);
             this.grpEmployeeContactDetails.Name = "grpEmployeeContactDetails";
             this.grpEmployeeContactDetails.Size = new System.Drawing.Size(328, 485);
-            this.grpEmployeeContactDetails.TabIndex = 1;
+            this.grpEmployeeContactDetails.TabIndex = 13;
             this.grpEmployeeContactDetails.TabStop = false;
             this.grpEmployeeContactDetails.Text = "Employee Contact Details";
             // 
@@ -130,14 +130,15 @@
             this.txtEmployeeId.Location = new System.Drawing.Point(190, 66);
             this.txtEmployeeId.Name = "txtEmployeeId";
             this.txtEmployeeId.Size = new System.Drawing.Size(123, 20);
-            this.txtEmployeeId.TabIndex = 1;
+            this.txtEmployeeId.TabIndex = 0;
+            this.txtEmployeeId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmployeeId_KeyPress);
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(190, 107);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(123, 20);
-            this.txtFirstName.TabIndex = 3;
+            this.txtFirstName.TabIndex = 1;
             // 
             // lblFirstName
             // 
@@ -153,7 +154,7 @@
             this.txtLastName.Location = new System.Drawing.Point(190, 148);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(123, 20);
-            this.txtLastName.TabIndex = 5;
+            this.txtLastName.TabIndex = 2;
             // 
             // lblLastName
             // 
@@ -171,7 +172,7 @@
             this.groupBox1.Location = new System.Drawing.Point(42, 185);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(271, 79);
-            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
@@ -181,7 +182,7 @@
             this.rdbMale.Location = new System.Drawing.Point(56, 35);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(48, 17);
-            this.rdbMale.TabIndex = 0;
+            this.rdbMale.TabIndex = 4;
             this.rdbMale.TabStop = true;
             this.rdbMale.Text = "Male";
             this.rdbMale.UseVisualStyleBackColor = true;
@@ -192,7 +193,7 @@
             this.rdbFemale.Location = new System.Drawing.Point(148, 35);
             this.rdbFemale.Name = "rdbFemale";
             this.rdbFemale.Size = new System.Drawing.Size(59, 17);
-            this.rdbFemale.TabIndex = 1;
+            this.rdbFemale.TabIndex = 5;
             this.rdbFemale.TabStop = true;
             this.rdbFemale.Text = "Female";
             this.rdbFemale.UseVisualStyleBackColor = true;
@@ -202,7 +203,7 @@
             this.btnExit.Location = new System.Drawing.Point(620, 559);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(108, 23);
-            this.btnExit.TabIndex = 2;
+            this.btnExit.TabIndex = 23;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -212,7 +213,7 @@
             this.btnAddEmployee.Location = new System.Drawing.Point(30, 559);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(108, 23);
-            this.btnAddEmployee.TabIndex = 3;
+            this.btnAddEmployee.TabIndex = 18;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
             this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
@@ -222,7 +223,7 @@
             this.btnUpdateEmployee.Location = new System.Drawing.Point(144, 559);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(108, 23);
-            this.btnUpdateEmployee.TabIndex = 4;
+            this.btnUpdateEmployee.TabIndex = 19;
             this.btnUpdateEmployee.Text = "Update Employee";
             this.btnUpdateEmployee.UseVisualStyleBackColor = true;
             this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
@@ -232,7 +233,7 @@
             this.btnDeleteEmployee.Location = new System.Drawing.Point(260, 559);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
             this.btnDeleteEmployee.Size = new System.Drawing.Size(108, 23);
-            this.btnDeleteEmployee.TabIndex = 5;
+            this.btnDeleteEmployee.TabIndex = 20;
             this.btnDeleteEmployee.Text = "Delete Employee";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
             this.btnDeleteEmployee.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
@@ -242,7 +243,7 @@
             this.btnReset.Location = new System.Drawing.Point(382, 559);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(108, 23);
-            this.btnReset.TabIndex = 6;
+            this.btnReset.TabIndex = 21;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -252,7 +253,7 @@
             this.btnPreview.Location = new System.Drawing.Point(504, 559);
             this.btnPreview.Name = "btnPreview";
             this.btnPreview.Size = new System.Drawing.Size(108, 23);
-            this.btnPreview.TabIndex = 7;
+            this.btnPreview.TabIndex = 22;
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
@@ -271,7 +272,7 @@
             this.txtNationalInsurenceNumber.Location = new System.Drawing.Point(190, 276);
             this.txtNationalInsurenceNumber.Name = "txtNationalInsurenceNumber";
             this.txtNationalInsurenceNumber.Size = new System.Drawing.Size(123, 20);
-            this.txtNationalInsurenceNumber.TabIndex = 8;
+            this.txtNationalInsurenceNumber.TabIndex = 6;
             // 
             // label2
             // 
@@ -288,7 +289,7 @@
             this.dtpDateOfBirth.Location = new System.Drawing.Point(170, 309);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(145, 20);
-            this.dtpDateOfBirth.TabIndex = 10;
+            this.dtpDateOfBirth.TabIndex = 7;
             // 
             // groupBox2
             // 
@@ -297,7 +298,7 @@
             this.groupBox2.Location = new System.Drawing.Point(48, 348);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(265, 100);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Marital Status :";
             // 
@@ -307,7 +308,7 @@
             this.rdbMarried.Location = new System.Drawing.Point(22, 40);
             this.rdbMarried.Name = "rdbMarried";
             this.rdbMarried.Size = new System.Drawing.Size(60, 17);
-            this.rdbMarried.TabIndex = 0;
+            this.rdbMarried.TabIndex = 9;
             this.rdbMarried.TabStop = true;
             this.rdbMarried.Text = "Married";
             this.rdbMarried.UseVisualStyleBackColor = true;
@@ -318,7 +319,7 @@
             this.rdbSingle.Location = new System.Drawing.Point(142, 40);
             this.rdbSingle.Name = "rdbSingle";
             this.rdbSingle.Size = new System.Drawing.Size(54, 17);
-            this.rdbSingle.TabIndex = 1;
+            this.rdbSingle.TabIndex = 10;
             this.rdbSingle.TabStop = true;
             this.rdbSingle.Text = "Single";
             this.rdbSingle.UseVisualStyleBackColor = true;
@@ -337,14 +338,14 @@
             this.txtAddress.Location = new System.Drawing.Point(120, 47);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(133, 20);
-            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabIndex = 11;
             // 
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(120, 91);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(133, 20);
-            this.txtCity.TabIndex = 3;
+            this.txtCity.TabIndex = 12;
             // 
             // lblCity
             // 
@@ -360,7 +361,7 @@
             this.txtPostCode.Location = new System.Drawing.Point(120, 136);
             this.txtPostCode.Name = "txtPostCode";
             this.txtPostCode.Size = new System.Drawing.Size(133, 20);
-            this.txtPostCode.TabIndex = 5;
+            this.txtPostCode.TabIndex = 13;
             // 
             // lblPostCode
             // 
@@ -385,7 +386,8 @@
             this.txtPhoneNumber.Location = new System.Drawing.Point(115, 233);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(133, 20);
-            this.txtPhoneNumber.TabIndex = 9;
+            this.txtPhoneNumber.TabIndex = 15;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblPhoneNumber
             // 
@@ -401,7 +403,7 @@
             this.txtEmailAddress.Location = new System.Drawing.Point(120, 283);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(133, 20);
-            this.txtEmailAddress.TabIndex = 11;
+            this.txtEmailAddress.TabIndex = 16;
             // 
             // lblEmailAddress
             // 
@@ -418,7 +420,7 @@
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(133, 113);
-            this.txtNotes.TabIndex = 13;
+            this.txtNotes.TabIndex = 17;
             // 
             // lblNotes
             // 
