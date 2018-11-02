@@ -1,0 +1,9 @@
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\PayrollApplication.exe.config
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\PayrollApplication.exe
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\PayrollApplication.pdb
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.csprojResolveAssemblyReference.cache
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.EmployeeForm.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.Properties.Resources.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.csproj.GenerateResource.Cache
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.exe
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.pdb
