@@ -320,7 +320,23 @@ namespace PayrollApplication
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Control Reset");
+            txtEmployeeId.Clear();
+            txtFirstName.Clear();
+            txtLastName.Text = "";
+            rdbMale.Checked = false;
+            rdbFemale.Checked = false;
+            txtNationalInsurenceNumber.Text = "";
+            dtpDateOfBirth.Value = new DateTime(1990, 12, 30);
+            rdbMarried.Checked = false;
+            rdbSingle.Checked = false;
+            cbIsMember.Checked = false;
+            txtAddress.Text = "";
+            txtCity.Text = "";
+            txtPostCode.Text = "";
+            cmbCountry.SelectedIndex = 0;
+            txtPhoneNumber.Text = "";
+            txtEmailAddress.Text = "";
+            txtNotes.Text = "";
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
