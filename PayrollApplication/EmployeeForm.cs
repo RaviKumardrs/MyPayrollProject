@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PayrollApplication
 {
@@ -19,6 +20,12 @@ namespace PayrollApplication
 
         private bool isControlsDataValid()
         {
+            Regex objEmployeeId = new Regex("^[0-9]{3,4}$");
+            Regex objFirstName = new Regex("^[A-Z][a-zA-Z]*$");
+            Regex objLastName = new Regex("^[A-Z][a-zA-Z]*$");
+            Regex OBJni=new Regex(@"^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-D\s]$")
+
+
 
             //Employee Id validation
             if (Convert.ToInt32(txtEmployeeId.Text.Length) < 1)
