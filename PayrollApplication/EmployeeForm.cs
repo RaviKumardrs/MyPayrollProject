@@ -300,6 +300,42 @@ namespace PayrollApplication
             return true;
         }
 
+        string gender;
+        string maritalStatus;
+        bool isMember;
+
+        private void CheckedItems()
+        {
+            if (rdbMale.Checked)
+            {
+                gender = "Male";
+            }
+            else
+            {
+                gender = "Female";
+            }
+
+            if (rdbMarried.Checked)
+            {
+                maritalStatus = "Married";
+            }
+
+            else
+            {
+                maritalStatus = "Single";
+            }
+
+            if (cbIsMember.Checked)
+            {
+                isMember=true;
+            }
+
+            else
+            {
+                isMember = false;
+            }
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             if (isControlsDataValid())
@@ -341,7 +377,10 @@ namespace PayrollApplication
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Preview");
+            PreviewForm previewForm = new PreviewForm();
+            CheckedItems();
+            previewForm.PreviewEmployeeData(Convert.ToInt32(txtEmployeeId.Text),txtFirstName.Text,txtLastName.Text,gender,txtNationalInsurenceNumber.Text,dtpDateOfBirth.Text,maritalStatus,isMember,txtAddress.Text,txtCity.Text,txtPostCode.Text,cmbCountry.SelectedItem.ToString(),txtPhoneNumber.Text,txtEmailAddress.Text,txtNotes.Text);
+            previewForm.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

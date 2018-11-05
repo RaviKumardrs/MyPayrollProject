@@ -7,3 +7,4 @@ E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.csproj.GenerateResource.Cache
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.exe
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.pdb
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PreviewForm.resources

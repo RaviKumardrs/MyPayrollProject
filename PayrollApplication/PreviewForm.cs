@@ -17,7 +17,7 @@ namespace PayrollApplication
             InitializeComponent();
         }
 
-        private void PreviewEmployeeData(int EmployeeId,string FirstName,string LastName,string Gender,string NationalInsurence,string DateofBirth,string MartialStatus,bool IsMember,string Address,string City,string PostCode,string Country,string PhoneNo,string EmailAddress,string Notes)
+        public void PreviewEmployeeData(int EmployeeId,string FirstName,string LastName,string Gender,string NationalInsurence,string DateofBirth,string MartialStatus,bool IsMember,string Address,string City,string PostCode,string Country,string PhoneNo,string EmailAddress,string Notes)
         {
             _lblEmployeeId.Text = Convert.ToString(EmployeeId);
             _lblFirstName.Text = FirstName;

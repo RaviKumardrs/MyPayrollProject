@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpEmployeeInformation = new System.Windows.Forms.GroupBox();
+            this.cbIsMember = new System.Windows.Forms.CheckBox();
+            this.lblUnionMembership = new System.Windows.Forms.Label();
             this.grpMartialStatus = new System.Windows.Forms.GroupBox();
             this.rdbSingle = new System.Windows.Forms.RadioButton();
             this.rdbMarried = new System.Windows.Forms.RadioButton();
@@ -66,8 +68,6 @@
             this.btnDeleteEmployee = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
-            this.lblUnionMembership = new System.Windows.Forms.Label();
-            this.cbIsMember = new System.Windows.Forms.CheckBox();
             this.grpEmployeeInformation.SuspendLayout();
             this.grpMartialStatus.SuspendLayout();
             this.grpGender.SuspendLayout();
@@ -96,6 +96,25 @@
             this.grpEmployeeInformation.TabIndex = 0;
             this.grpEmployeeInformation.TabStop = false;
             this.grpEmployeeInformation.Text = "Employee Information";
+            // 
+            // cbIsMember
+            // 
+            this.cbIsMember.AutoSize = true;
+            this.cbIsMember.Location = new System.Drawing.Point(168, 444);
+            this.cbIsMember.Name = "cbIsMember";
+            this.cbIsMember.Size = new System.Drawing.Size(72, 17);
+            this.cbIsMember.TabIndex = 11;
+            this.cbIsMember.Text = "IsMember";
+            this.cbIsMember.UseVisualStyleBackColor = true;
+            // 
+            // lblUnionMembership
+            // 
+            this.lblUnionMembership.AutoSize = true;
+            this.lblUnionMembership.Location = new System.Drawing.Point(46, 444);
+            this.lblUnionMembership.Name = "lblUnionMembership";
+            this.lblUnionMembership.Size = new System.Drawing.Size(101, 13);
+            this.lblUnionMembership.TabIndex = 10;
+            this.lblUnionMembership.Text = "Union Membership :";
             // 
             // grpMartialStatus
             // 
@@ -172,7 +191,7 @@
             this.grpGender.Size = new System.Drawing.Size(271, 79);
             this.grpGender.TabIndex = 3;
             this.grpGender.TabStop = false;
-            this.grpGender.Text = "groupBox1";
+            this.grpGender.Text = "Gender";
             // 
             // rdbFemale
             // 
@@ -640,25 +659,6 @@
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
-            // 
-            // lblUnionMembership
-            // 
-            this.lblUnionMembership.AutoSize = true;
-            this.lblUnionMembership.Location = new System.Drawing.Point(46, 444);
-            this.lblUnionMembership.Name = "lblUnionMembership";
-            this.lblUnionMembership.Size = new System.Drawing.Size(101, 13);
-            this.lblUnionMembership.TabIndex = 10;
-            this.lblUnionMembership.Text = "Union Membership :";
-            // 
-            // cbIsMember
-            // 
-            this.cbIsMember.AutoSize = true;
-            this.cbIsMember.Location = new System.Drawing.Point(168, 444);
-            this.cbIsMember.Name = "cbIsMember";
-            this.cbIsMember.Size = new System.Drawing.Size(72, 17);
-            this.cbIsMember.TabIndex = 11;
-            this.cbIsMember.Text = "IsMember";
-            this.cbIsMember.UseVisualStyleBackColor = true;
             // 
             // EmployeeForm
             // 
