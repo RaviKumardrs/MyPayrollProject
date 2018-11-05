@@ -23,7 +23,8 @@ namespace PayrollApplication
             Regex objEmployeeId = new Regex("^[0-9]{3,4}$");
             Regex objFirstName = new Regex("^[A-Z][a-zA-Z]*$");
             Regex objLastName = new Regex("^[A-Z][a-zA-Z]*$");
-            Regex OBJni=new Regex(@"^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-D\s]$")
+            Regex objNi = new Regex(@"^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-D\s]$");
+            Regex objEmail = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
 
 
 
@@ -31,6 +32,15 @@ namespace PayrollApplication
             if (Convert.ToInt32(txtEmployeeId.Text.Length) < 1)
             {
                 MessageBox.Show("Please, Enter Employee Id","Data Entry Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                txtEmployeeId.Focus();
+                txtEmployeeId.BackColor = Color.Red;
+                txtEmployeeId.ForeColor = Color.White;
+                return false;
+            }
+
+            else if (!objEmployeeId.IsMatch(txtEmployeeId.Text))
+            {
+                MessageBox.Show("Please, Enter a valid Employee Id", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmployeeId.Focus();
                 txtEmployeeId.BackColor = Color.Red;
                 txtEmployeeId.ForeColor = Color.White;
@@ -53,6 +63,16 @@ namespace PayrollApplication
                 return false;
             }
 
+            else if (!objFirstName.IsMatch(txtFirstName.Text))
+            {
+
+                MessageBox.Show("Please, Enter valid First Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtFirstName.Focus();
+                txtFirstName.BackColor = Color.Red;
+                txtFirstName.ForeColor = Color.White;
+                return false;
+            }
+
             else
             {
                 txtFirstName.BackColor = Color.White;
@@ -64,6 +84,16 @@ namespace PayrollApplication
             if (string.IsNullOrEmpty(txtLastName.Text))
             {
                 MessageBox.Show("Please, Enter Last Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtLastName.Focus();
+                txtLastName.BackColor = Color.Red;
+                txtLastName.ForeColor = Color.White;
+                return false;
+            }
+
+            else if (!objLastName.IsMatch(txtLastName.Text))
+            {
+
+                MessageBox.Show("Please, Enter valid Last Name", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLastName.Focus();
                 txtLastName.BackColor = Color.Red;
                 txtLastName.ForeColor = Color.White;
@@ -101,6 +131,15 @@ namespace PayrollApplication
             if (txtNationalInsurenceNumber.Text=="")
             {
                 MessageBox.Show("Please, Enter National Insurence Number", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNationalInsurenceNumber.Focus();
+                txtNationalInsurenceNumber.BackColor = Color.Red;
+                txtNationalInsurenceNumber.ForeColor = Color.White;
+                return false;
+            }
+
+            else if (!objNi.IsMatch(txtNationalInsurenceNumber.Text))
+            {
+                MessageBox.Show("Please, Enter valid National Insurence Number", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNationalInsurenceNumber.Focus();
                 txtNationalInsurenceNumber.BackColor = Color.Red;
                 txtNationalInsurenceNumber.ForeColor = Color.White;
@@ -221,6 +260,15 @@ namespace PayrollApplication
             if (txtEmailAddress.Text=="")
             {
                 MessageBox.Show("Please, Enter Email Address", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmailAddress.Focus();
+                txtEmailAddress.BackColor = Color.Red;
+                txtEmailAddress.ForeColor = Color.White;
+                return false;
+            }
+
+            else if (!objEmail.IsMatch(txtEmailAddress.Text))
+            {
+                MessageBox.Show("Please, Enter valid Email Address", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmailAddress.Focus();
                 txtEmailAddress.BackColor = Color.Red;
                 txtEmailAddress.ForeColor = Color.White;
