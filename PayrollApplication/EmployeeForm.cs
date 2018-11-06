@@ -448,5 +448,59 @@ namespace PayrollApplication
             this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
 
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtEmployeeId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+            txtFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
+            txtLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+            gender = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+            txtNationalInsurenceNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+            dtpDateOfBirth.Text= dataGridView1.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+            maritalStatus= dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+            isMember= Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[7].FormattedValue.ToString());
+            txtAddress.Text= dataGridView1.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+            txtCity.Text = dataGridView1.Rows[e.RowIndex].Cells[9].FormattedValue.ToString();
+            txtPostCode.Text = dataGridView1.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+            cmbCountry.Text = dataGridView1.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
+            txtPhoneNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[12].FormattedValue.ToString();
+            txtEmailAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[13].FormattedValue.ToString();
+            txtNotes.Text = dataGridView1.Rows[e.RowIndex].Cells[14].FormattedValue.ToString();
+
+            if (gender =="Male")
+            {
+                rdbMale.Checked = true;
+                rdbFemale.Checked = false;
+            }
+
+            else
+            {
+                rdbMale.Checked = false;
+                rdbFemale.Checked = true;
+            }
+
+            if (maritalStatus == "Married")
+            {
+                rdbMarried.Checked = true;
+                rdbSingle.Checked = false;
+            }
+
+            else
+            {
+                rdbMarried.Checked = false;
+                rdbSingle.Checked = true;
+            }
+
+            if (isMember == true)
+            {
+                cbIsMember.Checked = true;
+            }
+            else
+            {
+                cbIsMember.Checked = false;
+            }
+
+
+        }
     }
 }
