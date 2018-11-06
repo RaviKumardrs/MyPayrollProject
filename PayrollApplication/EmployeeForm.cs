@@ -33,7 +33,7 @@ namespace PayrollApplication
             //Employee Id validation
             if (Convert.ToInt32(txtEmployeeId.Text.Length) < 1)
             {
-                MessageBox.Show("Please, Enter Employee Id","Data Entry Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Please, Enter Employee Id", "Data Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmployeeId.Focus();
                 txtEmployeeId.BackColor = Color.Red;
                 txtEmployeeId.ForeColor = Color.White;
@@ -110,7 +110,7 @@ namespace PayrollApplication
 
             //Gender validation
 
-            if(rdbMale.Checked==false && rdbMale.Checked==false)
+            if (rdbMale.Checked == false && rdbMale.Checked == false)
             {
                 MessageBox.Show("Please, check either Male or Female.", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
@@ -130,7 +130,7 @@ namespace PayrollApplication
 
             //National Insurence validation
 
-            if (txtNationalInsurenceNumber.Text=="")
+            if (txtNationalInsurenceNumber.Text == "")
             {
                 MessageBox.Show("Please, Enter National Insurence Number", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNationalInsurenceNumber.Focus();
@@ -177,7 +177,7 @@ namespace PayrollApplication
             }
 
             //Address validation
-            if (txtAddress.Text=="")
+            if (txtAddress.Text == "")
             {
                 MessageBox.Show("Please, Enter Address", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtAddress.Focus();
@@ -226,7 +226,7 @@ namespace PayrollApplication
             }
 
             //Country validation
-            if (cmbCountry.SelectedIndex==0 || cmbCountry.SelectedIndex==-1)
+            if (cmbCountry.SelectedIndex == 0 || cmbCountry.SelectedIndex == -1)
             {
                 MessageBox.Show("Please, select country from list", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cmbCountry.Focus();
@@ -243,7 +243,7 @@ namespace PayrollApplication
 
             //Phone number validation
 
-            if (txtPhoneNumber.Text.Length==0)
+            if (txtPhoneNumber.Text.Length == 0)
             {
                 MessageBox.Show("Please, Enter Phone Number", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPhoneNumber.Focus();
@@ -259,7 +259,7 @@ namespace PayrollApplication
             }
 
             //Email Address validation
-            if (txtEmailAddress.Text=="")
+            if (txtEmailAddress.Text == "")
             {
                 MessageBox.Show("Please, Enter Email Address", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEmailAddress.Focus();
@@ -284,7 +284,7 @@ namespace PayrollApplication
             }
 
             //Notes validation
-            if (txtNotes.Text.Length >30)
+            if (txtNotes.Text.Length > 30)
             {
                 MessageBox.Show("Too Much Text! Please, eneter fewer text", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNotes.Focus();
@@ -329,7 +329,7 @@ namespace PayrollApplication
 
             if (cbIsMember.Checked)
             {
-                isMember=true;
+                isMember = true;
             }
 
             else
@@ -345,31 +345,55 @@ namespace PayrollApplication
                 CheckedItems();
                 string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
                 SqlConnection con = new SqlConnection(cs);
-                //try
-                //{
+                try
+                {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Insert into tblEmployee values(" + Convert.ToInt32(txtEmployeeId.Text) + ",'"+txtFirstName.Text+"','"+txtLastName.Text+"','"+gender+"','"+txtNationalInsurenceNumber.Text+"','"+dtpDateOfBirth.Value.ToString("MM/dd/yyyy")+"','"+maritalStatus+"','"+isMember+"','"+txtAddress.Text+"','"+txtCity.Text+"','"+txtPostCode.Text+"','"+cmbCountry.SelectedItem.ToString()+"','"+txtPhoneNumber.Text+"','"+txtEmailAddress.Text+"','"+txtNotes.Text+"')",con);
+                    SqlCommand cmd = new SqlCommand("Insert into tblEmployee values(" + Convert.ToInt32(txtEmployeeId.Text) + ",'" + txtFirstName.Text + "','" + txtLastName.Text + "','" + gender + "','" + txtNationalInsurenceNumber.Text + "','" + dtpDateOfBirth.Value.ToString("MM/dd/yyyy") + "','" + maritalStatus + "','" + isMember + "','" + txtAddress.Text + "','" + txtCity.Text + "','" + txtPostCode.Text + "','" + cmbCountry.SelectedItem.ToString() + "','" + txtPhoneNumber.Text + "','" + txtEmailAddress.Text + "','" + txtNotes.Text + "')", con);
                     cmd.ExecuteNonQuery();
                     this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
-                    MessageBox.Show("Employee with Id =" +txtEmployeeId.Text+" "+"has been addeded Sucessfully!","Insertion Sucessfully",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Employee with Id =" + txtEmployeeId.Text + " " + "has been addeded Sucessfully!", "Insertion Sucessfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //}
+                }
 
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("The following error occurred :" + ex.Message, "Data entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following error occurred :" + ex.Message, "Data entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                //finally
-                //{
-                //    con.Close();
-                //}
+                finally
+                {
+                    con.Close();
+                }
             }
         }
 
         private void btnUpdateEmployee_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Updated");
+            if (isControlsDataValid())
+            {
+                CheckedItems();
+                string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+                SqlConnection con = new SqlConnection(cs);
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Update tblEmployee set FirstName='" + txtFirstName.Text + "',LastName='" + txtLastName.Text + "',Gender='" + gender + "',NINumber='" + txtNationalInsurenceNumber.Text + "',DateOfBirth='" + dtpDateOfBirth.Value.ToString("MM/dd/yyyy") + "',MaritalStatus='" + maritalStatus + "',IsMember='" + isMember + "',Address='" + txtAddress.Text + "',City='" + txtCity.Text + "',PostCode='" + txtPostCode.Text + "',Country='" + cmbCountry.SelectedItem.ToString() + "',PhoneNumber='" + txtPhoneNumber.Text + "',Email='" + txtEmailAddress.Text + "',Notes='" + txtNotes.Text + "' Where EmployeeId=" + txtEmployeeId.Text + "", con);
+                    cmd.ExecuteNonQuery();
+                    this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+                    MessageBox.Show("Employee with Id =" + txtEmployeeId.Text + " " + "has been updated Sucessfully!", "Updation Sucessfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The following error occurred :" + ex.Message, "Data entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                finally
+                {
+                    con.Close();
+                }
+            }
         }
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
@@ -402,7 +426,7 @@ namespace PayrollApplication
         {
             PreviewForm previewForm = new PreviewForm();
             CheckedItems();
-            previewForm.PreviewEmployeeData(Convert.ToInt32(txtEmployeeId.Text),txtFirstName.Text,txtLastName.Text,gender,txtNationalInsurenceNumber.Text,dtpDateOfBirth.Text,maritalStatus,isMember,txtAddress.Text,txtCity.Text,txtPostCode.Text,cmbCountry.SelectedItem.ToString(),txtPhoneNumber.Text,txtEmailAddress.Text,txtNotes.Text);
+            previewForm.PreviewEmployeeData(Convert.ToInt32(txtEmployeeId.Text), txtFirstName.Text, txtLastName.Text, gender, txtNationalInsurenceNumber.Text, dtpDateOfBirth.Text, maritalStatus, isMember, txtAddress.Text, txtCity.Text, txtPostCode.Text, cmbCountry.SelectedItem.ToString(), txtPhoneNumber.Text, txtEmailAddress.Text, txtNotes.Text);
             previewForm.ShowDialog();
         }
 
@@ -417,7 +441,7 @@ namespace PayrollApplication
         private void txtEmployeeId_KeyPress(object sender, KeyPressEventArgs e)
         {
             IsNumberOrBackspace = false;
-            if(char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
             {
                 IsNumberOrBackspace = true;
             }
@@ -456,10 +480,10 @@ namespace PayrollApplication
             txtLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
             gender = dataGridView1.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
             txtNationalInsurenceNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
-            dtpDateOfBirth.Text= dataGridView1.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
-            maritalStatus= dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
-            isMember= Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[7].FormattedValue.ToString());
-            txtAddress.Text= dataGridView1.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+            dtpDateOfBirth.Text = dataGridView1.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+            maritalStatus = dataGridView1.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+            isMember = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[7].FormattedValue.ToString());
+            txtAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
             txtCity.Text = dataGridView1.Rows[e.RowIndex].Cells[9].FormattedValue.ToString();
             txtPostCode.Text = dataGridView1.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
             cmbCountry.Text = dataGridView1.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
@@ -467,7 +491,7 @@ namespace PayrollApplication
             txtEmailAddress.Text = dataGridView1.Rows[e.RowIndex].Cells[13].FormattedValue.ToString();
             txtNotes.Text = dataGridView1.Rows[e.RowIndex].Cells[14].FormattedValue.ToString();
 
-            if (gender =="Male")
+            if (gender == "Male")
             {
                 rdbMale.Checked = true;
                 rdbFemale.Checked = false;
