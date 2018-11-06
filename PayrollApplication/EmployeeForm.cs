@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PayrollApplication
 {
@@ -340,7 +342,28 @@ namespace PayrollApplication
         {
             if (isControlsDataValid())
             {
-                MessageBox.Show("Employee Addeded");
+                CheckedItems();
+                string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+                SqlConnection con = new SqlConnection(cs);
+                //try
+                //{
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Insert into tblEmployee values(" + Convert.ToInt32(txtEmployeeId.Text) + ",'"+txtFirstName.Text+"','"+txtLastName.Text+"','"+gender+"','"+txtNationalInsurenceNumber.Text+"','"+dtpDateOfBirth.Value.ToString("MM/dd/yyyy")+"','"+maritalStatus+"','"+isMember+"','"+txtAddress.Text+"','"+txtCity.Text+"','"+txtPostCode.Text+"','"+cmbCountry.SelectedItem.ToString()+"','"+txtPhoneNumber.Text+"','"+txtEmailAddress.Text+"','"+txtNotes.Text+"')",con);
+                    cmd.ExecuteNonQuery();
+                    this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+                    MessageBox.Show("Employee with Id =" +txtEmployeeId.Text+" "+"has been addeded Sucessfully!","Insertion Sucessfully",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                //}
+
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("The following error occurred :" + ex.Message, "Data entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+
+                //finally
+                //{
+                //    con.Close();
+                //}
             }
         }
 
@@ -418,5 +441,12 @@ namespace PayrollApplication
         }
 
         #endregion
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet.tblEmployee' table. You can move, or remove it, as needed.
+            this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+
+        }
     }
 }
