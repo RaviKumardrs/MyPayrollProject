@@ -110,7 +110,7 @@ namespace PayrollApplication
 
             //Gender validation
 
-            if (rdbMale.Checked == false && rdbMale.Checked == false)
+            if (rdbMale.Checked == false && rdbFemale.Checked == false)
             {
                 MessageBox.Show("Please, check either Male or Female.", "Data Entry error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 grpGender.Focus();
@@ -338,6 +338,27 @@ namespace PayrollApplication
             }
         }
 
+        private void ClearControls()
+        {
+            txtEmployeeId.Clear();
+            txtFirstName.Clear();
+            txtLastName.Text = "";
+            rdbMale.Checked = false;
+            rdbFemale.Checked = false;
+            txtNationalInsurenceNumber.Text = "";
+            dtpDateOfBirth.Value = new DateTime(1990, 12, 30);
+            rdbMarried.Checked = false;
+            rdbSingle.Checked = false;
+            cbIsMember.Checked = false;
+            txtAddress.Text = "";
+            txtCity.Text = "";
+            txtPostCode.Text = "";
+            cmbCountry.SelectedIndex = 0;
+            txtPhoneNumber.Text = "";
+            txtEmailAddress.Text = "";
+            txtNotes.Text = "";
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             if (isControlsDataValid())
@@ -352,6 +373,7 @@ namespace PayrollApplication
                     cmd.ExecuteNonQuery();
                     this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
                     MessageBox.Show("Employee with Id =" + txtEmployeeId.Text + " " + "has been addeded Sucessfully!", "Insertion Sucessfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearControls();
 
                 }
 
@@ -381,6 +403,7 @@ namespace PayrollApplication
                     cmd.ExecuteNonQuery();
                     this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
                     MessageBox.Show("Employee with Id =" + txtEmployeeId.Text + " " + "has been updated Sucessfully!", "Updation Sucessfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearControls();
 
                 }
 
@@ -403,23 +426,7 @@ namespace PayrollApplication
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtEmployeeId.Clear();
-            txtFirstName.Clear();
-            txtLastName.Text = "";
-            rdbMale.Checked = false;
-            rdbFemale.Checked = false;
-            txtNationalInsurenceNumber.Text = "";
-            dtpDateOfBirth.Value = new DateTime(1990, 12, 30);
-            rdbMarried.Checked = false;
-            rdbSingle.Checked = false;
-            cbIsMember.Checked = false;
-            txtAddress.Text = "";
-            txtCity.Text = "";
-            txtPostCode.Text = "";
-            cmbCountry.SelectedIndex = 0;
-            txtPhoneNumber.Text = "";
-            txtEmailAddress.Text = "";
-            txtNotes.Text = "";
+            ClearControls();
         }
 
         private void btnPreview_Click(object sender, EventArgs e)
