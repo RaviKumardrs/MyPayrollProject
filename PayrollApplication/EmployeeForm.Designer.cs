@@ -71,9 +71,6 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.btnPreview = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.payrollSystemDBDataSet = new PayrollApplication.PayrollSystemDBDataSet();
-            this.tblEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblEmployeeTableAdapter = new PayrollApplication.PayrollSystemDBDataSetTableAdapters.tblEmployeeTableAdapter();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,13 +86,16 @@
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblEmployeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.payrollSystemDBDataSet = new PayrollApplication.PayrollSystemDBDataSet();
+            this.tblEmployeeTableAdapter = new PayrollApplication.PayrollSystemDBDataSetTableAdapters.tblEmployeeTableAdapter();
             this.grpEmployeeInformation.SuspendLayout();
             this.grpMartialStatus.SuspendLayout();
             this.grpGender.SuspendLayout();
             this.grpEmployeeContactDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmployeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // grpEmployeeInformation
@@ -716,23 +716,9 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(730, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(725, 150);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // payrollSystemDBDataSet
-            // 
-            this.payrollSystemDBDataSet.DataSetName = "PayrollSystemDBDataSet";
-            this.payrollSystemDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblEmployeeBindingSource
-            // 
-            this.tblEmployeeBindingSource.DataMember = "tblEmployee";
-            this.tblEmployeeBindingSource.DataSource = this.payrollSystemDBDataSet;
-            // 
-            // tblEmployeeTableAdapter
-            // 
-            this.tblEmployeeTableAdapter.ClearBeforeFill = true;
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
@@ -839,6 +825,20 @@
             this.notesDataGridViewTextBoxColumn.Name = "notesDataGridViewTextBoxColumn";
             this.notesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // tblEmployeeBindingSource
+            // 
+            this.tblEmployeeBindingSource.DataMember = "tblEmployee";
+            this.tblEmployeeBindingSource.DataSource = this.payrollSystemDBDataSet;
+            // 
+            // payrollSystemDBDataSet
+            // 
+            this.payrollSystemDBDataSet.DataSetName = "PayrollSystemDBDataSet";
+            this.payrollSystemDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblEmployeeTableAdapter
+            // 
+            this.tblEmployeeTableAdapter.ClearBeforeFill = true;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,8 +868,8 @@
             this.grpEmployeeContactDetails.ResumeLayout(false);
             this.grpEmployeeContactDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblEmployeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -421,7 +421,36 @@ namespace PayrollApplication
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Employee Deleted");
+            DialogResult dialogResult = MessageBox.Show("Are you sure to permantally delete this Employee record?","Confirm record Deletion",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (isControlsDataValid())
+                {
+                    CheckedItems();
+                    string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+                    SqlConnection con = new SqlConnection(cs);
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("Delete from tblEmployee where EmployeeId="+txtEmployeeId.Text+"", con);
+                        cmd.ExecuteNonQuery();
+                        this.tblEmployeeTableAdapter.Fill(this.payrollSystemDBDataSet.tblEmployee);
+                        MessageBox.Show("Employee with Id =" + txtEmployeeId.Text + " " + "has been deleted Sucessfully!", "Deletion Sucessfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearControls();
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("The following error occurred :" + ex.Message, "Deletion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    finally
+                    {
+                        con.Close();
+                    }
+                }
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
