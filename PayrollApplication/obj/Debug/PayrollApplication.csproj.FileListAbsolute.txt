@@ -8,3 +8,4 @@ E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.exe
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.pdb
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PreviewForm.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PayrollCalculatorForm.resources

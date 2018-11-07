@@ -53,6 +53,12 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PayrollCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PayrollCalculator.Designer.cs">
+      <DependentUpon>PayrollCalculator.cs</DependentUpon>
+    </Compile>
     <Compile Include="PayrollSystemDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PayrollCalculator.resx">
+      <DependentUpon>PayrollCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreviewForm.resx">
       <DependentUpon>PreviewForm.cs</DependentUpon>
