@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintPaySlip = new System.Windows.Forms.Button();
@@ -133,7 +133,6 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.txtSearchPayMonth = new System.Windows.Forms.TextBox();
             this.txtSearchPayDate = new System.Windows.Forms.TextBox();
             this.txtSearchNINumber = new System.Windows.Forms.TextBox();
             this.txtFullName = new System.Windows.Forms.TextBox();
@@ -156,6 +155,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.dataGridViewPaymentRecord = new System.Windows.Forms.DataGridView();
             this.btnComputePayment = new System.Windows.Forms.Button();
+            this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourlyRate)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -1496,9 +1496,9 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.cmbSearchPayMonth);
             this.groupBox11.Controls.Add(this.btnSearch);
             this.groupBox11.Controls.Add(this.btnClear);
-            this.groupBox11.Controls.Add(this.txtSearchPayMonth);
             this.groupBox11.Controls.Add(this.txtSearchPayDate);
             this.groupBox11.Controls.Add(this.txtSearchNINumber);
             this.groupBox11.Controls.Add(this.txtFullName);
@@ -1534,13 +1534,6 @@
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // txtSearchPayMonth
-            // 
-            this.txtSearchPayMonth.Location = new System.Drawing.Point(135, 263);
-            this.txtSearchPayMonth.Name = "txtSearchPayMonth";
-            this.txtSearchPayMonth.Size = new System.Drawing.Size(100, 20);
-            this.txtSearchPayMonth.TabIndex = 1;
             // 
             // txtSearchPayDate
             // 
@@ -1720,8 +1713,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewPaymentRecord.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1740,6 +1733,14 @@
             this.btnComputePayment.UseVisualStyleBackColor = true;
             this.btnComputePayment.Click += new System.EventHandler(this.btnComputePayment_Click);
             // 
+            // cmbSearchPayMonth
+            // 
+            this.cmbSearchPayMonth.FormattingEnabled = true;
+            this.cmbSearchPayMonth.Location = new System.Drawing.Point(135, 263);
+            this.cmbSearchPayMonth.Name = "cmbSearchPayMonth";
+            this.cmbSearchPayMonth.Size = new System.Drawing.Size(113, 21);
+            this.cmbSearchPayMonth.TabIndex = 6;
+            // 
             // PayrollCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1752,6 +1753,7 @@
             this.Name = "PayrollCalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payroll Calculator";
+            this.Load += new System.EventHandler(this.PayrollCalculatorForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourlyRate)).EndInit();
@@ -1915,7 +1917,6 @@
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.TextBox txtSearchPayMonth;
         private System.Windows.Forms.TextBox txtSearchPayDate;
         private System.Windows.Forms.TextBox txtSearchNINumber;
         private System.Windows.Forms.TextBox txtFullName;
@@ -1936,5 +1937,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnComputePayment;
+        private System.Windows.Forms.ComboBox cmbSearchPayMonth;
     }
 }

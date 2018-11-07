@@ -21,11 +21,23 @@ namespace PayrollApplication
             InitializeComponent();
         }
 
+        private void ListOfMonths()
+        {
+            string[] months = { "Select a Month", "January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+            foreach(var month in months)
+            {
+                cmbCurrentMonth.Items.Add(month);
+                cmbCurrentMonth.SelectedIndex = 0;
+
+                cmbSearchPayMonth.Items.Add(month);
+                cmbSearchPayMonth.SelectedIndex = 0;
+            }
+        }
+
         private void btnComputePayment_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Compute Pay");
         }
-
 
         private void btnSavePay_Click(object sender, EventArgs e)
         {
@@ -85,6 +97,11 @@ namespace PayrollApplication
             {
                 con.Close();
             }
+        }
+
+        private void PayrollCalculatorForm_Load(object sender, EventArgs e)
+        {
+            ListOfMonths();
         }
     }
 }
