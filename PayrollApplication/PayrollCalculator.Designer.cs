@@ -156,6 +156,7 @@
             this.dataGridViewPaymentRecord = new System.Windows.Forms.DataGridView();
             this.btnComputePayment = new System.Windows.Forms.Button();
             this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
+            this.txtContracturalEarnings = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourlyRate)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -279,6 +280,7 @@
             // 
             this.txtNetPay.Location = new System.Drawing.Point(748, 586);
             this.txtNetPay.Name = "txtNetPay";
+            this.txtNetPay.ReadOnly = true;
             this.txtNetPay.Size = new System.Drawing.Size(100, 20);
             this.txtNetPay.TabIndex = 13;
             // 
@@ -358,6 +360,7 @@
             // 
             this.txtTotalDeductions.Location = new System.Drawing.Point(125, 137);
             this.txtTotalDeductions.Name = "txtTotalDeductions";
+            this.txtTotalDeductions.ReadOnly = true;
             this.txtTotalDeductions.Size = new System.Drawing.Size(175, 20);
             this.txtTotalDeductions.TabIndex = 4;
             // 
@@ -384,6 +387,7 @@
             // 
             this.txtNIContribution.Location = new System.Drawing.Point(104, 69);
             this.txtNIContribution.Name = "txtNIContribution";
+            this.txtNIContribution.ReadOnly = true;
             this.txtNIContribution.Size = new System.Drawing.Size(61, 20);
             this.txtNIContribution.TabIndex = 2;
             // 
@@ -409,6 +413,7 @@
             // 
             this.txtSLC.Location = new System.Drawing.Point(239, 93);
             this.txtSLC.Name = "txtSLC";
+            this.txtSLC.ReadOnly = true;
             this.txtSLC.Size = new System.Drawing.Size(61, 20);
             this.txtSLC.TabIndex = 2;
             // 
@@ -425,6 +430,7 @@
             // 
             this.txtUnion.Location = new System.Drawing.Point(239, 62);
             this.txtUnion.Name = "txtUnion";
+            this.txtUnion.ReadOnly = true;
             this.txtUnion.Size = new System.Drawing.Size(61, 20);
             this.txtUnion.TabIndex = 2;
             // 
@@ -432,6 +438,7 @@
             // 
             this.txtTaxCode.Location = new System.Drawing.Point(239, 25);
             this.txtTaxCode.Name = "txtTaxCode";
+            this.txtTaxCode.ReadOnly = true;
             this.txtTaxCode.Size = new System.Drawing.Size(61, 20);
             this.txtTaxCode.TabIndex = 2;
             this.txtTaxCode.Text = "1100L";
@@ -449,6 +456,7 @@
             // 
             this.txtTaxAmount.Location = new System.Drawing.Point(104, 32);
             this.txtTaxAmount.Name = "txtTaxAmount";
+            this.txtTaxAmount.ReadOnly = true;
             this.txtTaxAmount.Size = new System.Drawing.Size(61, 20);
             this.txtTaxAmount.TabIndex = 2;
             // 
@@ -465,6 +473,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.txtContracturalEarnings);
             this.groupBox9.Controls.Add(this.label26);
             this.groupBox9.Controls.Add(this.txtTotalEarnings);
             this.groupBox9.Controls.Add(this.txtOvertimeEarnings);
@@ -491,13 +500,15 @@
             // 
             this.txtTotalEarnings.Location = new System.Drawing.Point(109, 108);
             this.txtTotalEarnings.Name = "txtTotalEarnings";
+            this.txtTotalEarnings.ReadOnly = true;
             this.txtTotalEarnings.Size = new System.Drawing.Size(100, 20);
             this.txtTotalEarnings.TabIndex = 3;
             // 
             // txtOvertimeEarnings
             // 
-            this.txtOvertimeEarnings.Location = new System.Drawing.Point(111, 49);
+            this.txtOvertimeEarnings.Location = new System.Drawing.Point(130, 52);
             this.txtOvertimeEarnings.Name = "txtOvertimeEarnings";
+            this.txtOvertimeEarnings.ReadOnly = true;
             this.txtOvertimeEarnings.Size = new System.Drawing.Size(100, 20);
             this.txtOvertimeEarnings.TabIndex = 3;
             // 
@@ -506,18 +517,18 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(6, 52);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(92, 13);
+            this.label25.Size = new System.Drawing.Size(99, 13);
             this.label25.TabIndex = 1;
-            this.label25.Text = "Contractual Hours";
+            this.label25.Text = "Overtime Earnings :";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(6, 22);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(92, 13);
+            this.label24.Size = new System.Drawing.Size(111, 13);
             this.label24.TabIndex = 1;
-            this.label24.Text = "Contractual Hours";
+            this.label24.Text = "Contractual Earnings :";
             // 
             // groupBox8
             // 
@@ -540,6 +551,7 @@
             // 
             this.txtTotalHoursWorked.Location = new System.Drawing.Point(143, 114);
             this.txtTotalHoursWorked.Name = "txtTotalHoursWorked";
+            this.txtTotalHoursWorked.ReadOnly = true;
             this.txtTotalHoursWorked.Size = new System.Drawing.Size(80, 20);
             this.txtTotalHoursWorked.TabIndex = 1;
             // 
@@ -547,6 +559,7 @@
             // 
             this.txtOvertimeRate.Location = new System.Drawing.Point(125, 81);
             this.txtOvertimeRate.Name = "txtOvertimeRate";
+            this.txtOvertimeRate.ReadOnly = true;
             this.txtOvertimeRate.Size = new System.Drawing.Size(100, 20);
             this.txtOvertimeRate.TabIndex = 1;
             // 
@@ -554,6 +567,7 @@
             // 
             this.txtOvertimeHours.Location = new System.Drawing.Point(125, 47);
             this.txtOvertimeHours.Name = "txtOvertimeHours";
+            this.txtOvertimeHours.ReadOnly = true;
             this.txtOvertimeHours.Size = new System.Drawing.Size(100, 20);
             this.txtOvertimeHours.TabIndex = 1;
             // 
@@ -561,6 +575,7 @@
             // 
             this.txtContracturalHours.Location = new System.Drawing.Point(125, 17);
             this.txtContracturalHours.Name = "txtContracturalHours";
+            this.txtContracturalHours.ReadOnly = true;
             this.txtContracturalHours.Size = new System.Drawing.Size(100, 20);
             this.txtContracturalHours.TabIndex = 1;
             // 
@@ -1376,6 +1391,11 @@
             // listBoxPayPeriod
             // 
             this.listBoxPayPeriod.FormattingEnabled = true;
+            this.listBoxPayPeriod.Items.AddRange(new object[] {
+            "Select Pay Period",
+            "17/12/2016-18/01/2017",
+            "17/01/2017-18/02/2017",
+            "17/02/2017-18/03/2017"});
             this.listBoxPayPeriod.Location = new System.Drawing.Point(6, 39);
             this.listBoxPayPeriod.Name = "listBoxPayPeriod";
             this.listBoxPayPeriod.Size = new System.Drawing.Size(136, 56);
@@ -1403,6 +1423,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(287, 59);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(121, 20);
             this.txtLastName.TabIndex = 7;
             // 
@@ -1410,6 +1431,7 @@
             // 
             this.txtNINumber.Location = new System.Drawing.Point(287, 25);
             this.txtNINumber.Name = "txtNINumber";
+            this.txtNINumber.ReadOnly = true;
             this.txtNINumber.Size = new System.Drawing.Size(121, 20);
             this.txtNINumber.TabIndex = 6;
             // 
@@ -1454,6 +1476,7 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(98, 63);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(121, 20);
             this.txtFirstName.TabIndex = 1;
             // 
@@ -1741,6 +1764,14 @@
             this.cmbSearchPayMonth.Size = new System.Drawing.Size(113, 21);
             this.cmbSearchPayMonth.TabIndex = 6;
             // 
+            // txtContracturalEarnings
+            // 
+            this.txtContracturalEarnings.Location = new System.Drawing.Point(130, 18);
+            this.txtContracturalEarnings.Name = "txtContracturalEarnings";
+            this.txtContracturalEarnings.ReadOnly = true;
+            this.txtContracturalEarnings.Size = new System.Drawing.Size(100, 20);
+            this.txtContracturalEarnings.TabIndex = 5;
+            // 
             // PayrollCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1938,5 +1969,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button btnComputePayment;
         private System.Windows.Forms.ComboBox cmbSearchPayMonth;
+        private System.Windows.Forms.TextBox txtContracturalEarnings;
     }
 }
