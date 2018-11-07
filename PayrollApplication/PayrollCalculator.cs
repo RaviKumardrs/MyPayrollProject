@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PayrollApplication
 {
     public partial class PayrollCalculatorForm : Form
     {
+        string FullName = string.Empty;
+
         public PayrollCalculatorForm()
         {
             InitializeComponent();
@@ -48,6 +52,39 @@ namespace PayrollApplication
             Application.Exit();
         }
 
-       
+        private void btnGetEmployee_Click(object sender, EventArgs e)
+        {
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select FirstName,LastName,NINumber from tblEmployee where EmployeeId="+txtEmployeeId.Text+"", con);
+            try
+            {
+                SqlDataReader dr= cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtFirstName.Text = dr[0].ToString();
+                    txtLastName.Text = dr[1].ToString();
+                    txtNINumber.Text = dr[2].ToString();
+                    FullName = txtFirstName.Text + " " + txtLastName.Text;
+                    lblEmployeeFullName.Text = FullName;
+                }
+
+                else
+                {
+                    MessageBox.Show("No Employee Found with Employee Id "+txtEmployeeId.Text,"Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error Message");
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
