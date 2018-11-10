@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintPaySlip = new System.Windows.Forms.Button();
@@ -157,6 +158,30 @@
             this.btnComputePayment = new System.Windows.Forms.Button();
             this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
             this.txtContracturalEarnings = new System.Windows.Forms.TextBox();
+            this.payrollSystemDBDataSet1 = new PayrollApplication.PayrollSystemDBDataSet1();
+            this.tblPayRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
+            this.paymentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nINumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payPeriodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payMonthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hourlyRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractualHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.overtimeHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contractualEarningsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.overtimeEarningsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalEarningsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taxAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nIContributionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unionFeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sLCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDeductionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netPayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourlyRate)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -199,6 +224,8 @@
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaymentRecord)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPayRecordsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -1736,10 +1763,34 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewPaymentRecord.AutoGenerateColumns = false;
             this.dataGridViewPaymentRecord.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPaymentRecord.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentIdDataGridViewTextBoxColumn,
+            this.employeeIdDataGridViewTextBoxColumn,
+            this.fullNameDataGridViewTextBoxColumn,
+            this.nINumberDataGridViewTextBoxColumn,
+            this.payDateDataGridViewTextBoxColumn,
+            this.payPeriodDataGridViewTextBoxColumn,
+            this.payMonthDataGridViewTextBoxColumn,
+            this.hourlyRateDataGridViewTextBoxColumn,
+            this.contractualHoursDataGridViewTextBoxColumn,
+            this.overtimeHoursDataGridViewTextBoxColumn,
+            this.totalHoursDataGridViewTextBoxColumn,
+            this.contractualEarningsDataGridViewTextBoxColumn,
+            this.overtimeEarningsDataGridViewTextBoxColumn,
+            this.totalEarningsDataGridViewTextBoxColumn,
+            this.taxCodeDataGridViewTextBoxColumn,
+            this.taxAmountDataGridViewTextBoxColumn,
+            this.nIContributionDataGridViewTextBoxColumn,
+            this.unionFeeDataGridViewTextBoxColumn,
+            this.sLCDataGridViewTextBoxColumn,
+            this.totalDeductionsDataGridViewTextBoxColumn,
+            this.netPayDataGridViewTextBoxColumn});
+            this.dataGridViewPaymentRecord.DataSource = this.tblPayRecordsBindingSource;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 668);
             this.dataGridViewPaymentRecord.Name = "dataGridViewPaymentRecord";
@@ -1771,6 +1822,147 @@
             this.txtContracturalEarnings.ReadOnly = true;
             this.txtContracturalEarnings.Size = new System.Drawing.Size(100, 20);
             this.txtContracturalEarnings.TabIndex = 5;
+            // 
+            // payrollSystemDBDataSet1
+            // 
+            this.payrollSystemDBDataSet1.DataSetName = "PayrollSystemDBDataSet1";
+            this.payrollSystemDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblPayRecordsBindingSource
+            // 
+            this.tblPayRecordsBindingSource.DataMember = "tblPayRecords";
+            this.tblPayRecordsBindingSource.DataSource = this.payrollSystemDBDataSet1;
+            // 
+            // tblPayRecordsTableAdapter
+            // 
+            this.tblPayRecordsTableAdapter.ClearBeforeFill = true;
+            // 
+            // paymentIdDataGridViewTextBoxColumn
+            // 
+            this.paymentIdDataGridViewTextBoxColumn.DataPropertyName = "PaymentId";
+            this.paymentIdDataGridViewTextBoxColumn.HeaderText = "PaymentId";
+            this.paymentIdDataGridViewTextBoxColumn.Name = "paymentIdDataGridViewTextBoxColumn";
+            this.paymentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            // 
+            // fullNameDataGridViewTextBoxColumn
+            // 
+            this.fullNameDataGridViewTextBoxColumn.DataPropertyName = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.HeaderText = "FullName";
+            this.fullNameDataGridViewTextBoxColumn.Name = "fullNameDataGridViewTextBoxColumn";
+            // 
+            // nINumberDataGridViewTextBoxColumn
+            // 
+            this.nINumberDataGridViewTextBoxColumn.DataPropertyName = "NINumber";
+            this.nINumberDataGridViewTextBoxColumn.HeaderText = "NINumber";
+            this.nINumberDataGridViewTextBoxColumn.Name = "nINumberDataGridViewTextBoxColumn";
+            // 
+            // payDateDataGridViewTextBoxColumn
+            // 
+            this.payDateDataGridViewTextBoxColumn.DataPropertyName = "PayDate";
+            this.payDateDataGridViewTextBoxColumn.HeaderText = "PayDate";
+            this.payDateDataGridViewTextBoxColumn.Name = "payDateDataGridViewTextBoxColumn";
+            // 
+            // payPeriodDataGridViewTextBoxColumn
+            // 
+            this.payPeriodDataGridViewTextBoxColumn.DataPropertyName = "PayPeriod";
+            this.payPeriodDataGridViewTextBoxColumn.HeaderText = "PayPeriod";
+            this.payPeriodDataGridViewTextBoxColumn.Name = "payPeriodDataGridViewTextBoxColumn";
+            // 
+            // payMonthDataGridViewTextBoxColumn
+            // 
+            this.payMonthDataGridViewTextBoxColumn.DataPropertyName = "PayMonth";
+            this.payMonthDataGridViewTextBoxColumn.HeaderText = "PayMonth";
+            this.payMonthDataGridViewTextBoxColumn.Name = "payMonthDataGridViewTextBoxColumn";
+            // 
+            // hourlyRateDataGridViewTextBoxColumn
+            // 
+            this.hourlyRateDataGridViewTextBoxColumn.DataPropertyName = "HourlyRate";
+            this.hourlyRateDataGridViewTextBoxColumn.HeaderText = "HourlyRate";
+            this.hourlyRateDataGridViewTextBoxColumn.Name = "hourlyRateDataGridViewTextBoxColumn";
+            // 
+            // contractualHoursDataGridViewTextBoxColumn
+            // 
+            this.contractualHoursDataGridViewTextBoxColumn.DataPropertyName = "ContractualHours";
+            this.contractualHoursDataGridViewTextBoxColumn.HeaderText = "ContractualHours";
+            this.contractualHoursDataGridViewTextBoxColumn.Name = "contractualHoursDataGridViewTextBoxColumn";
+            // 
+            // overtimeHoursDataGridViewTextBoxColumn
+            // 
+            this.overtimeHoursDataGridViewTextBoxColumn.DataPropertyName = "OvertimeHours";
+            this.overtimeHoursDataGridViewTextBoxColumn.HeaderText = "OvertimeHours";
+            this.overtimeHoursDataGridViewTextBoxColumn.Name = "overtimeHoursDataGridViewTextBoxColumn";
+            // 
+            // totalHoursDataGridViewTextBoxColumn
+            // 
+            this.totalHoursDataGridViewTextBoxColumn.DataPropertyName = "TotalHours";
+            this.totalHoursDataGridViewTextBoxColumn.HeaderText = "TotalHours";
+            this.totalHoursDataGridViewTextBoxColumn.Name = "totalHoursDataGridViewTextBoxColumn";
+            // 
+            // contractualEarningsDataGridViewTextBoxColumn
+            // 
+            this.contractualEarningsDataGridViewTextBoxColumn.DataPropertyName = "ContractualEarnings";
+            this.contractualEarningsDataGridViewTextBoxColumn.HeaderText = "ContractualEarnings";
+            this.contractualEarningsDataGridViewTextBoxColumn.Name = "contractualEarningsDataGridViewTextBoxColumn";
+            // 
+            // overtimeEarningsDataGridViewTextBoxColumn
+            // 
+            this.overtimeEarningsDataGridViewTextBoxColumn.DataPropertyName = "OvertimeEarnings";
+            this.overtimeEarningsDataGridViewTextBoxColumn.HeaderText = "OvertimeEarnings";
+            this.overtimeEarningsDataGridViewTextBoxColumn.Name = "overtimeEarningsDataGridViewTextBoxColumn";
+            // 
+            // totalEarningsDataGridViewTextBoxColumn
+            // 
+            this.totalEarningsDataGridViewTextBoxColumn.DataPropertyName = "TotalEarnings";
+            this.totalEarningsDataGridViewTextBoxColumn.HeaderText = "TotalEarnings";
+            this.totalEarningsDataGridViewTextBoxColumn.Name = "totalEarningsDataGridViewTextBoxColumn";
+            // 
+            // taxCodeDataGridViewTextBoxColumn
+            // 
+            this.taxCodeDataGridViewTextBoxColumn.DataPropertyName = "TaxCode";
+            this.taxCodeDataGridViewTextBoxColumn.HeaderText = "TaxCode";
+            this.taxCodeDataGridViewTextBoxColumn.Name = "taxCodeDataGridViewTextBoxColumn";
+            // 
+            // taxAmountDataGridViewTextBoxColumn
+            // 
+            this.taxAmountDataGridViewTextBoxColumn.DataPropertyName = "TaxAmount";
+            this.taxAmountDataGridViewTextBoxColumn.HeaderText = "TaxAmount";
+            this.taxAmountDataGridViewTextBoxColumn.Name = "taxAmountDataGridViewTextBoxColumn";
+            // 
+            // nIContributionDataGridViewTextBoxColumn
+            // 
+            this.nIContributionDataGridViewTextBoxColumn.DataPropertyName = "NIContribution";
+            this.nIContributionDataGridViewTextBoxColumn.HeaderText = "NIContribution";
+            this.nIContributionDataGridViewTextBoxColumn.Name = "nIContributionDataGridViewTextBoxColumn";
+            // 
+            // unionFeeDataGridViewTextBoxColumn
+            // 
+            this.unionFeeDataGridViewTextBoxColumn.DataPropertyName = "UnionFee";
+            this.unionFeeDataGridViewTextBoxColumn.HeaderText = "UnionFee";
+            this.unionFeeDataGridViewTextBoxColumn.Name = "unionFeeDataGridViewTextBoxColumn";
+            // 
+            // sLCDataGridViewTextBoxColumn
+            // 
+            this.sLCDataGridViewTextBoxColumn.DataPropertyName = "SLC";
+            this.sLCDataGridViewTextBoxColumn.HeaderText = "SLC";
+            this.sLCDataGridViewTextBoxColumn.Name = "sLCDataGridViewTextBoxColumn";
+            // 
+            // totalDeductionsDataGridViewTextBoxColumn
+            // 
+            this.totalDeductionsDataGridViewTextBoxColumn.DataPropertyName = "TotalDeductions";
+            this.totalDeductionsDataGridViewTextBoxColumn.HeaderText = "TotalDeductions";
+            this.totalDeductionsDataGridViewTextBoxColumn.Name = "totalDeductionsDataGridViewTextBoxColumn";
+            // 
+            // netPayDataGridViewTextBoxColumn
+            // 
+            this.netPayDataGridViewTextBoxColumn.DataPropertyName = "NetPay";
+            this.netPayDataGridViewTextBoxColumn.HeaderText = "NetPay";
+            this.netPayDataGridViewTextBoxColumn.Name = "netPayDataGridViewTextBoxColumn";
             // 
             // PayrollCalculatorForm
             // 
@@ -1836,6 +2028,8 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaymentRecord)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPayRecordsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1970,5 +2164,29 @@
         private System.Windows.Forms.Button btnComputePayment;
         private System.Windows.Forms.ComboBox cmbSearchPayMonth;
         private System.Windows.Forms.TextBox txtContracturalEarnings;
+        private PayrollSystemDBDataSet1 payrollSystemDBDataSet1;
+        private System.Windows.Forms.BindingSource tblPayRecordsBindingSource;
+        private PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter tblPayRecordsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nINumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payPeriodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payMonthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hourlyRateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contractualHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn overtimeHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contractualEarningsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn overtimeEarningsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalEarningsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn taxAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nIContributionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unionFeeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sLCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDeductionsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn netPayDataGridViewTextBoxColumn;
     }
 }

@@ -14,6 +14,10 @@ namespace PayrollApplication
 {
     public partial class PayrollCalculatorForm : Form
     {
+
+        #region ---Variables declarations
+
+
         string FullName = string.Empty;
 
         //Declaring variables for each day of the weeks
@@ -50,6 +54,19 @@ namespace PayrollApplication
 
         //Declaring variable for Net pay
         double netPay;
+
+        #endregion
+
+        private void PayrollCalculatorForm_Load(object sender, EventArgs e)
+        {
+           
+            this.WindowState = FormWindowState.Maximized;
+
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet1.tblPayRecords' table. You can move, or remove it, as needed.
+            this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
+            ListOfMonths();
+            ResetControls();
+        }
 
         public PayrollCalculatorForm()
         {
@@ -206,16 +223,16 @@ namespace PayrollApplication
                     tax = ((916.67 * .0) + ((totalAmountEarned - 916.67) * taxRate));
                 }
 
-                else if(totalAmountEarned>3583.33&& totalAmountEarned <= 12500)
+                else if (totalAmountEarned > 3583.33 && totalAmountEarned <= 12500)
                 {
                     taxRate = .40;
-                    tax = ((916.67 * .0) + ((3583.33-916.67) * .20) + ((totalAmountEarned - 3583.33) * taxRate));
+                    tax = ((916.67 * .0) + ((3583.33 - 916.67) * .20) + ((totalAmountEarned - 3583.33) * taxRate));
                 }
 
-                else if (totalAmountEarned>12500)
+                else if (totalAmountEarned > 12500)
                 {
                     taxRate = .45;
-                    tax = ((916.67 * .0) + ((3583.33 - 916.67) * .20) +((12500-3583.33)*.40) + ((totalAmountEarned - 12500) * taxRate));
+                    tax = ((916.67 * .0) + ((3583.33 - 916.67) * .20) + ((12500 - 3583.33) * .40) + ((totalAmountEarned - 12500) * taxRate));
                 }
                 #endregion
                 #region ---NI Computation---
@@ -224,12 +241,12 @@ namespace PayrollApplication
                     NIRate = .0;
                 }
 
-                else if (totalAmountEarned>=620 && totalAmountEarned<=3308)
+                else if (totalAmountEarned >= 620 && totalAmountEarned <= 3308)
                 {
                     NIRate = .12;
                 }
 
-                else if (totalAmountEarned>3308)
+                else if (totalAmountEarned > 3308)
                 {
                     NIContribution = .02;
                 }
@@ -262,7 +279,53 @@ namespace PayrollApplication
 
         private void btnSavePay_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Save Payment");
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("Insert into tblPayRecords(EmployeeId,FullName,NINumber,PayDate,PayPeriod,PayMonth,HourlyRate,ContractualHours,OvertimeHours,TotalHours,ContractualEarnings,OvertimeEarnings,TotalEarnings,TaxCode,TaxAmount,NIContribution,UnionFee,SLC,TotalDeductions,NetPay) values(@EmployeeId,@FullName,@NINumber,@PayDate,@PayPeriod,@PayMonth,@HourlyRate,@ContractualHours,@OvertimeHours,@TotalHours,@ContractualEarnings,@OvertimeEarnings,@TotalEarnings,@TaxCode,@TaxAmount,@NIContribution,@UnionFee,@SLC,@TotalDeductions,@NetPay)", con);
+            cmd.Parameters.AddWithValue("@EmployeeId", txtEmployeeId.Text);
+            cmd.Parameters.AddWithValue("@FullName", lblEmployeeFullName.Text);
+            cmd.Parameters.AddWithValue("@NINumber", txtNINumber.Text);
+            cmd.Parameters.AddWithValue("@PayDate", dtpCurrentDate.Value.ToString("MM/dd/yyyy"));
+            cmd.Parameters.AddWithValue("@PayPeriod", listBoxPayPeriod.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@PayMonth", cmbCurrentMonth.SelectedItem.ToString());
+            cmd.Parameters.AddWithValue("@HourlyRate", nudHourlyRate.Value.ToString());
+            cmd.Parameters.AddWithValue("@ContractualHours", txtContracturalHours.Text);
+            cmd.Parameters.AddWithValue("@OvertimeHours", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@TotalHours", txtTotalHoursWorked.Text);
+            cmd.Parameters.AddWithValue("@ContractualEarnings", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@OvertimeEarnings", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@TotalEarnings", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@TaxCode", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@TaxAmount", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@NIContribution", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@UnionFee", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@SLC", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@TotalDeductions", txtOvertimeHours.Text);
+            cmd.Parameters.AddWithValue("@NetPay", txtOvertimeHours.Text);
+
+            try
+            {
+                con.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("The Payment added Sucessfully", "Insertion Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            catch (SqlException ex)
+            {
+                MessageBox.Show("The following Error occurred:" + ex.Message + ex.StackTrace, "Query Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                con.Close();
+            }
+
+            ResetControls();
+
+            this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -318,12 +381,6 @@ namespace PayrollApplication
             {
                 con.Close();
             }
-        }
-
-        private void PayrollCalculatorForm_Load(object sender, EventArgs e)
-        {
-            ListOfMonths();
-            ResetControls();
         }
 
         private void GetWeek1Values()
