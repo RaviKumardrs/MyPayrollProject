@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnComputePayment = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -340,6 +340,7 @@
             this.linkLabelWinCalculator.TabIndex = 11;
             this.linkLabelWinCalculator.TabStop = true;
             this.linkLabelWinCalculator.Text = "Windows Calculator";
+            this.linkLabelWinCalculator.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWinCalculator_LinkClicked);
             // 
             // nudHourlyRate
             // 
@@ -1790,8 +1791,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewPaymentRecord.AutoGenerateColumns = false;
             this.dataGridViewPaymentRecord.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace PayrollApplication
 {
@@ -792,6 +793,11 @@ namespace PayrollApplication
         private decimal ConvertTimeToDecimal(decimal hh, decimal mm)
         {
             return (hh + (mm / 60));
+        }
+
+        private void linkLabelWinCalculator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("calc.exe");
         }
     }
 }
