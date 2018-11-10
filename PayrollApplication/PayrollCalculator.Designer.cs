@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnComputePayment = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnPrintPaySlip = new System.Windows.Forms.Button();
             this.btnGeneratePaySlip = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.txtTaxAmount = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtContracturalEarnings = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.txtTotalEarnings = new System.Windows.Forms.TextBox();
             this.txtOvertimeEarnings = new System.Windows.Forms.TextBox();
@@ -132,6 +134,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTime = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtSearchPayDate = new System.Windows.Forms.TextBox();
@@ -155,12 +158,6 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.dataGridViewPaymentRecord = new System.Windows.Forms.DataGridView();
-            this.btnComputePayment = new System.Windows.Forms.Button();
-            this.cmbSearchPayMonth = new System.Windows.Forms.ComboBox();
-            this.txtContracturalEarnings = new System.Windows.Forms.TextBox();
-            this.payrollSystemDBDataSet1 = new PayrollApplication.PayrollSystemDBDataSet1();
-            this.tblPayRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
             this.paymentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -182,6 +179,9 @@
             this.sLCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDeductionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.netPayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblPayRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.payrollSystemDBDataSet1 = new PayrollApplication.PayrollSystemDBDataSet1();
+            this.tblPayRecordsTableAdapter = new PayrollApplication.PayrollSystemDBDataSet1TableAdapters.tblPayRecordsTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHourlyRate)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -224,8 +224,8 @@
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaymentRecord)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPayRecordsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -247,15 +247,25 @@
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(62, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(870, 650);
+            this.groupBox1.Size = new System.Drawing.Size(870, 622);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnComputePayment
+            // 
+            this.btnComputePayment.Location = new System.Drawing.Point(16, 593);
+            this.btnComputePayment.Name = "btnComputePayment";
+            this.btnComputePayment.Size = new System.Drawing.Size(121, 23);
+            this.btnComputePayment.TabIndex = 16;
+            this.btnComputePayment.Text = "Compute Pay";
+            this.btnComputePayment.UseVisualStyleBackColor = true;
+            this.btnComputePayment.Click += new System.EventHandler(this.btnComputePayment_Click);
+            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(721, 621);
+            this.btnExit.Location = new System.Drawing.Point(694, 593);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(121, 23);
             this.btnExit.TabIndex = 14;
@@ -265,7 +275,7 @@
             // 
             // btnPrintPaySlip
             // 
-            this.btnPrintPaySlip.Location = new System.Drawing.Point(584, 621);
+            this.btnPrintPaySlip.Location = new System.Drawing.Point(557, 593);
             this.btnPrintPaySlip.Name = "btnPrintPaySlip";
             this.btnPrintPaySlip.Size = new System.Drawing.Size(121, 23);
             this.btnPrintPaySlip.TabIndex = 14;
@@ -275,7 +285,7 @@
             // 
             // btnGeneratePaySlip
             // 
-            this.btnGeneratePaySlip.Location = new System.Drawing.Point(447, 621);
+            this.btnGeneratePaySlip.Location = new System.Drawing.Point(420, 593);
             this.btnGeneratePaySlip.Name = "btnGeneratePaySlip";
             this.btnGeneratePaySlip.Size = new System.Drawing.Size(121, 23);
             this.btnGeneratePaySlip.TabIndex = 14;
@@ -285,7 +295,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(310, 621);
+            this.btnReset.Location = new System.Drawing.Point(283, 593);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(121, 23);
             this.btnReset.TabIndex = 14;
@@ -295,7 +305,7 @@
             // 
             // btnSavePay
             // 
-            this.btnSavePay.Location = new System.Drawing.Point(173, 621);
+            this.btnSavePay.Location = new System.Drawing.Point(146, 593);
             this.btnSavePay.Name = "btnSavePay";
             this.btnSavePay.Size = new System.Drawing.Size(121, 23);
             this.btnSavePay.TabIndex = 14;
@@ -305,7 +315,7 @@
             // 
             // txtNetPay
             // 
-            this.txtNetPay.Location = new System.Drawing.Point(748, 586);
+            this.txtNetPay.Location = new System.Drawing.Point(711, 569);
             this.txtNetPay.Name = "txtNetPay";
             this.txtNetPay.ReadOnly = true;
             this.txtNetPay.Size = new System.Drawing.Size(100, 20);
@@ -315,7 +325,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(661, 589);
+            this.label33.Location = new System.Drawing.Point(630, 572);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(60, 13);
             this.label33.TabIndex = 12;
@@ -324,7 +334,7 @@
             // linkLabelWinCalculator
             // 
             this.linkLabelWinCalculator.AutoSize = true;
-            this.linkLabelWinCalculator.Location = new System.Drawing.Point(539, 386);
+            this.linkLabelWinCalculator.Location = new System.Drawing.Point(509, 362);
             this.linkLabelWinCalculator.Name = "linkLabelWinCalculator";
             this.linkLabelWinCalculator.Size = new System.Drawing.Size(101, 13);
             this.linkLabelWinCalculator.TabIndex = 11;
@@ -333,7 +343,7 @@
             // 
             // nudHourlyRate
             // 
-            this.nudHourlyRate.Location = new System.Drawing.Point(343, 384);
+            this.nudHourlyRate.Location = new System.Drawing.Point(313, 360);
             this.nudHourlyRate.Name = "nudHourlyRate";
             this.nudHourlyRate.Size = new System.Drawing.Size(120, 20);
             this.nudHourlyRate.TabIndex = 10;
@@ -347,7 +357,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(267, 385);
+            this.label19.Location = new System.Drawing.Point(237, 361);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(82, 13);
             this.label19.TabIndex = 9;
@@ -357,7 +367,7 @@
             // 
             this.lblEmployeeFullName.AutoSize = true;
             this.lblEmployeeFullName.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeFullName.Location = new System.Drawing.Point(385, 20);
+            this.lblEmployeeFullName.Location = new System.Drawing.Point(354, -13);
             this.lblEmployeeFullName.Name = "lblEmployeeFullName";
             this.lblEmployeeFullName.Size = new System.Drawing.Size(0, 25);
             this.lblEmployeeFullName.TabIndex = 5;
@@ -376,7 +386,7 @@
             this.groupBox7.Controls.Add(this.txtTaxCode);
             this.groupBox7.Controls.Add(this.label27);
             this.groupBox7.Controls.Add(this.txtTaxAmount);
-            this.groupBox7.Location = new System.Drawing.Point(536, 410);
+            this.groupBox7.Location = new System.Drawing.Point(506, 386);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(312, 176);
             this.groupBox7.TabIndex = 4;
@@ -491,7 +501,7 @@
             // 
             this.groupBox6.Controls.Add(this.groupBox9);
             this.groupBox6.Controls.Add(this.groupBox8);
-            this.groupBox6.Location = new System.Drawing.Point(36, 410);
+            this.groupBox6.Location = new System.Drawing.Point(6, 386);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(494, 176);
             this.groupBox6.TabIndex = 3;
@@ -512,6 +522,14 @@
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Earnings";
+            // 
+            // txtContracturalEarnings
+            // 
+            this.txtContracturalEarnings.Location = new System.Drawing.Point(130, 18);
+            this.txtContracturalEarnings.Name = "txtContracturalEarnings";
+            this.txtContracturalEarnings.ReadOnly = true;
+            this.txtContracturalEarnings.Size = new System.Drawing.Size(100, 20);
+            this.txtContracturalEarnings.TabIndex = 5;
             // 
             // label26
             // 
@@ -646,7 +664,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox5.Location = new System.Drawing.Point(36, 166);
+            this.groupBox5.Location = new System.Drawing.Point(6, 142);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(812, 212);
             this.groupBox5.TabIndex = 2;
@@ -1365,7 +1383,7 @@
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.listBoxPayPeriod);
-            this.groupBox4.Location = new System.Drawing.Point(505, 52);
+            this.groupBox4.Location = new System.Drawing.Point(474, 19);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(344, 108);
             this.groupBox4.TabIndex = 1;
@@ -1439,7 +1457,7 @@
             this.groupBox3.Controls.Add(this.txtFirstName);
             this.groupBox3.Controls.Add(this.txtEmployeeId);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(37, 52);
+            this.groupBox3.Location = new System.Drawing.Point(6, 19);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(462, 108);
             this.groupBox3.TabIndex = 0;
@@ -1528,16 +1546,16 @@
             this.groupBox2.Controls.Add(this.btnTime);
             this.groupBox2.Controls.Add(this.groupBox11);
             this.groupBox2.Controls.Add(this.groupBox10);
-            this.groupBox2.Location = new System.Drawing.Point(949, 19);
+            this.groupBox2.Location = new System.Drawing.Point(888, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(370, 643);
+            this.groupBox2.Size = new System.Drawing.Size(346, 615);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
             // btnTime
             // 
             this.btnTime.Font = new System.Drawing.Font("Stencil", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTime.Location = new System.Drawing.Point(82, 45);
+            this.btnTime.Location = new System.Drawing.Point(6, 18);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(250, 76);
             this.btnTime.TabIndex = 7;
@@ -1560,12 +1578,20 @@
             this.groupBox11.Controls.Add(this.label40);
             this.groupBox11.Controls.Add(this.label39);
             this.groupBox11.Controls.Add(this.label38);
-            this.groupBox11.Location = new System.Drawing.Point(27, 240);
+            this.groupBox11.Location = new System.Drawing.Point(6, 240);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(326, 384);
+            this.groupBox11.Size = new System.Drawing.Size(326, 355);
             this.groupBox11.TabIndex = 6;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Search Payment";
+            // 
+            // cmbSearchPayMonth
+            // 
+            this.cmbSearchPayMonth.FormattingEnabled = true;
+            this.cmbSearchPayMonth.Location = new System.Drawing.Point(135, 263);
+            this.cmbSearchPayMonth.Name = "cmbSearchPayMonth";
+            this.cmbSearchPayMonth.Size = new System.Drawing.Size(113, 21);
+            this.cmbSearchPayMonth.TabIndex = 6;
             // 
             // btnSearch
             // 
@@ -1684,7 +1710,7 @@
             this.groupBox10.Controls.Add(this.label36);
             this.groupBox10.Controls.Add(this.label35);
             this.groupBox10.Controls.Add(this.label34);
-            this.groupBox10.Location = new System.Drawing.Point(27, 135);
+            this.groupBox10.Location = new System.Drawing.Point(6, 135);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(326, 99);
             this.groupBox10.TabIndex = 5;
@@ -1706,6 +1732,7 @@
             this.btnConvert.TabIndex = 6;
             this.btnConvert.Text = "=";
             this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // txtMinutes
             // 
@@ -1763,8 +1790,8 @@
             this.dataGridViewPaymentRecord.AllowUserToDeleteRows = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeColumns = false;
             this.dataGridViewPaymentRecord.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridViewPaymentRecord.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewPaymentRecord.AutoGenerateColumns = false;
             this.dataGridViewPaymentRecord.BackgroundColor = System.Drawing.Color.Silver;
             this.dataGridViewPaymentRecord.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1792,50 +1819,10 @@
             this.netPayDataGridViewTextBoxColumn});
             this.dataGridViewPaymentRecord.DataSource = this.tblPayRecordsBindingSource;
             this.dataGridViewPaymentRecord.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 668);
+            this.dataGridViewPaymentRecord.Location = new System.Drawing.Point(0, 640);
             this.dataGridViewPaymentRecord.Name = "dataGridViewPaymentRecord";
-            this.dataGridViewPaymentRecord.Size = new System.Drawing.Size(1348, 81);
+            this.dataGridViewPaymentRecord.Size = new System.Drawing.Size(1234, 109);
             this.dataGridViewPaymentRecord.TabIndex = 2;
-            // 
-            // btnComputePayment
-            // 
-            this.btnComputePayment.Location = new System.Drawing.Point(43, 621);
-            this.btnComputePayment.Name = "btnComputePayment";
-            this.btnComputePayment.Size = new System.Drawing.Size(121, 23);
-            this.btnComputePayment.TabIndex = 16;
-            this.btnComputePayment.Text = "Compute Pay";
-            this.btnComputePayment.UseVisualStyleBackColor = true;
-            this.btnComputePayment.Click += new System.EventHandler(this.btnComputePayment_Click);
-            // 
-            // cmbSearchPayMonth
-            // 
-            this.cmbSearchPayMonth.FormattingEnabled = true;
-            this.cmbSearchPayMonth.Location = new System.Drawing.Point(135, 263);
-            this.cmbSearchPayMonth.Name = "cmbSearchPayMonth";
-            this.cmbSearchPayMonth.Size = new System.Drawing.Size(113, 21);
-            this.cmbSearchPayMonth.TabIndex = 6;
-            // 
-            // txtContracturalEarnings
-            // 
-            this.txtContracturalEarnings.Location = new System.Drawing.Point(130, 18);
-            this.txtContracturalEarnings.Name = "txtContracturalEarnings";
-            this.txtContracturalEarnings.ReadOnly = true;
-            this.txtContracturalEarnings.Size = new System.Drawing.Size(100, 20);
-            this.txtContracturalEarnings.TabIndex = 5;
-            // 
-            // payrollSystemDBDataSet1
-            // 
-            this.payrollSystemDBDataSet1.DataSetName = "PayrollSystemDBDataSet1";
-            this.payrollSystemDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblPayRecordsBindingSource
-            // 
-            this.tblPayRecordsBindingSource.DataMember = "tblPayRecords";
-            this.tblPayRecordsBindingSource.DataSource = this.payrollSystemDBDataSet1;
-            // 
-            // tblPayRecordsTableAdapter
-            // 
-            this.tblPayRecordsTableAdapter.ClearBeforeFill = true;
             // 
             // paymentIdDataGridViewTextBoxColumn
             // 
@@ -1964,15 +1951,31 @@
             this.netPayDataGridViewTextBoxColumn.HeaderText = "NetPay";
             this.netPayDataGridViewTextBoxColumn.Name = "netPayDataGridViewTextBoxColumn";
             // 
+            // tblPayRecordsBindingSource
+            // 
+            this.tblPayRecordsBindingSource.DataMember = "tblPayRecords";
+            this.tblPayRecordsBindingSource.DataSource = this.payrollSystemDBDataSet1;
+            // 
+            // payrollSystemDBDataSet1
+            // 
+            this.payrollSystemDBDataSet1.DataSetName = "PayrollSystemDBDataSet1";
+            this.payrollSystemDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblPayRecordsTableAdapter
+            // 
+            this.tblPayRecordsTableAdapter.ClearBeforeFill = true;
+            // 
             // PayrollCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(1348, 749);
+            this.ClientSize = new System.Drawing.Size(1234, 749);
             this.Controls.Add(this.dataGridViewPaymentRecord);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PayrollCalculatorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payroll Calculator";
@@ -2028,8 +2031,8 @@
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPaymentRecord)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblPayRecordsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollSystemDBDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

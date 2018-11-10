@@ -30,6 +30,7 @@ namespace PayrollApplication
         double contractualHoursWk1, contractualHoursWk2, contractualHoursWk3, contractualHoursWk4;
         double overtimeHoursWk1, overtimeHoursWk2, overtimeHoursWk3, overtimeHoursWk4;
         double totalHoursWk1, totalHoursWk2, totalHoursWk3, totalHoursWk4;
+
         double totalContractualHours;
         double totalOvertimeHours;
         double totalHoursWorked;
@@ -59,9 +60,6 @@ namespace PayrollApplication
 
         private void PayrollCalculatorForm_Load(object sender, EventArgs e)
         {
-           
-            this.WindowState = FormWindowState.Maximized;
-
             // TODO: This line of code loads data into the 'payrollSystemDBDataSet1.tblPayRecords' table. You can move, or remove it, as needed.
             this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
             ListOfMonths();
@@ -766,6 +764,34 @@ namespace PayrollApplication
 
         }
 
+        private void btnConvert_Click(object sender, EventArgs e)
+        {
+            decimal hours, minutes, decimalHours = 0.00M;
+            if(decimal.TryParse(txtHours.Text,out hours))
+            {
+                if(decimal.TryParse(txtMinutes.Text,out minutes))
+                {
+                    decimalHours = ConvertTimeToDecimal(hours, minutes);
+                    txtDecimalHours.Text = decimalHours.ToString("F2");
+                }
 
+                else
+                {
+                    MessageBox.Show("Please, Enter Real Number Only for Minutes");
+                    txtMinutes.Focus();
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please, Enter Real Number Only for Hours.");
+                txtHours.Focus();
+            }
+        }
+
+        private decimal ConvertTimeToDecimal(decimal hh, decimal mm)
+        {
+            return (hh + (mm / 60));
+        }
     }
 }
