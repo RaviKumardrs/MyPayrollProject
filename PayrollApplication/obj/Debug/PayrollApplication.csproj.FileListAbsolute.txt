@@ -10,3 +10,4 @@ E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PreviewForm.resources
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PayrollCalculatorForm.resources
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.AboutPayrollSystem.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.PayrollMDI.resources

@@ -857,7 +857,7 @@
             this.Controls.Add(this.grpEmployeeInformation);
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Employee Form";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.grpEmployeeInformation.ResumeLayout(false);
             this.grpEmployeeInformation.PerformLayout();
