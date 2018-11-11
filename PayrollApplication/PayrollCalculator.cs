@@ -336,14 +336,9 @@ namespace PayrollApplication
             ResetControls();
         }
 
-        private void btnGeneratePaySlip_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Generate Payslip");
-        }
-
         private void btnPrintPaySlip_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Print Payslip");
+            printDocument1.Print();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -764,9 +759,6 @@ namespace PayrollApplication
             txtMinutes.Text = "00";
             txtDecimalHours.Text = "0.00";
 
-
-
-
         }
 
         private void btnConvert_Click(object sender, EventArgs e)
@@ -883,7 +875,74 @@ namespace PayrollApplication
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            txtSearchPaymentId.Text = "";
+            txtSearchEmployeeId.Text = "";
+            txtSearchFullName.Text = "";
+            txtSearchNINumber.Text = "";
+            txtSearchPayDate.Text = DateTime.Now.ToShortDateString();
+            cmbSearchPayMonth.SelectedIndex = 0;
+        }
+
+        private void btnGeneratePaySlip_Click(object sender, EventArgs e)  
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawLine(new Pen(Color.Blue,2),60,90,750,90 );
+            Image image = Image.FromFile(@"E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\Resources\company-logo.png");
+            e.Graphics.DrawImage(image,60,100);
+            e.Graphics.DrawString("Payroll Application Inc.", new Font("Arial", 24, FontStyle.Bold), Brushes.DarkBlue   , new Point(200, 140));
+            e.Graphics.DrawLine(new Pen(Color.Blue, 2), 60, 230, 750, 230);
+            e.Graphics.DrawString("Pay Date :"+dtpCurrentDate.Value.ToString("MM/dd/yyyy"),new Font("Times New Roman",16,FontStyle.Regular),Brushes.DarkBlue,new Point(500,250));
+
+            e.Graphics.DrawRectangle(new Pen(Color.Blue,2),60,290,700,50);
+            e.Graphics.DrawString("  Employee Id :"+txtEmployeeId.Text+"        Name: "+lblEmployeeFullName.Text+"       NINO:"+txtNINumber.Text,new Font("Times New Roman",16,FontStyle.Regular),Brushes.DarkBlue,new Point(60,300));
+
+            e.Graphics.DrawLine(new Pen(Color.Blue,3),60,420,750,420);
+            e.Graphics.DrawString("EARNINGS", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 385));
+            e.Graphics.DrawString("HOURS", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(180, 385));
+            e.Graphics.DrawString("RATES", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(260, 385));
+            e.Graphics.DrawString("AMOUNTS", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(350, 385));
+            e.Graphics.DrawString("DEDUCTIONS", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 385));
+            e.Graphics.DrawString("AMOUNTS", new Font("Times New Roman", 12, FontStyle.Bold), Brushes.DarkBlue, new Point(650, 385));
+
+            e.Graphics.DrawString("Basic :", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 430));
+            e.Graphics.DrawString(txtContracturalHours.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(180,430));
+            e.Graphics.DrawString(nudHourlyRate.Value.ToString("F"), new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(260, 430));
+            e.Graphics.DrawString(txtContracturalEarnings.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(350, 430));
+            e.Graphics.DrawString("Tax (1100L)", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 430));
+            e.Graphics.DrawString(txtTaxAmount.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 430));
+
+            e.Graphics.DrawString("Overtime :", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60, 470));
+            e.Graphics.DrawString(txtOvertimeHours.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(180, 470));
+            e.Graphics.DrawString(txtOvertimeRate.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(260, 470));
+            e.Graphics.DrawString(txtOvertimeEarnings.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(350, 470));
+            e.Graphics.DrawString("NIC", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 470));
+            e.Graphics.DrawString(txtNIContribution.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 470));
+
+            e.Graphics.DrawString("Union:", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 510));
+            e.Graphics.DrawString(txtUnion.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 510));
+
+            e.Graphics.DrawString("SLC:", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 540));
+            e.Graphics.DrawString(txtSLC.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 540));
+
+            e.Graphics.DrawLine(new Pen(Color.Blue,1),60,590,750,590);
+
+            e.Graphics.DrawString("Total Earnings: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(60,620));
+            e.Graphics.DrawString(txtTotalEarnings.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(350, 620));
+            e.Graphics.DrawString("Total Deductions:  ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(480, 620));
+            e.Graphics.DrawString(txtTotalDeductions.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 620));
+
+            e.Graphics.DrawLine(new Pen(Color.Blue, 1), 60, 680, 750, 680);
+
+            e.Graphics.DrawRectangle(new Pen(Color.Blue, 2), 60, 710, 700, 50);
+            e.Graphics.DrawString("NET PAY: ", new Font("Times New Roman", 14, FontStyle.Bold), Brushes.DarkBlue, new Point(500, 720));
+            e.Graphics.DrawString(txtNetPay.Text, new Font("Times New Roman", 14, FontStyle.Italic), Brushes.DarkBlue, new Point(650, 720));
 
         }
+
     }
 }
