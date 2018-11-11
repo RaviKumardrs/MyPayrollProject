@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace PayrollApplication
 {
@@ -33,7 +34,9 @@ namespace PayrollApplication
         double totalHoursWk1, totalHoursWk2, totalHoursWk3, totalHoursWk4;
 
         double totalContractualHours;
+
         double totalOvertimeHours;
+
         double totalHoursWorked;
 
         //Declaring variables for Amount
@@ -65,6 +68,7 @@ namespace PayrollApplication
             this.tblPayRecordsTableAdapter.Fill(this.payrollSystemDBDataSet1.tblPayRecords);
             ListOfMonths();
             ResetControls();
+            PayrollTimer1.Start();
         }
 
         public PayrollCalculatorForm()
@@ -768,9 +772,9 @@ namespace PayrollApplication
         private void btnConvert_Click(object sender, EventArgs e)
         {
             decimal hours, minutes, decimalHours = 0.00M;
-            if(decimal.TryParse(txtHours.Text,out hours))
+            if (decimal.TryParse(txtHours.Text, out hours))
             {
-                if(decimal.TryParse(txtMinutes.Text,out minutes))
+                if (decimal.TryParse(txtMinutes.Text, out minutes))
                 {
                     decimalHours = ConvertTimeToDecimal(hours, minutes);
                     txtDecimalHours.Text = decimalHours.ToString("F2");
@@ -798,6 +802,88 @@ namespace PayrollApplication
         private void linkLabelWinCalculator_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("calc.exe");
+        }
+
+        private void PayrollTimer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            btnTime.Text = dt.ToString("HH:mm:ss");
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                StringBuilder SearchStatement = new StringBuilder();
+                if (txtSearchPaymentId.Text.Length > 0)
+                {
+                    SearchStatement.Append("Convert(PaymentId,'System.String') like '%" +  txtSearchPaymentId.Text + "%'");
+                }
+
+                if (txtSearchEmployeeId.Text.Length > 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append("and");
+                    }
+
+                    SearchStatement.Append("Convert(EmployeeId,'System.String') like '%" + txtSearchEmployeeId.Text + "%'");
+                }
+
+                if (txtSearchFullName.Text.Length > 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append("and");
+                    }
+
+                    SearchStatement.Append(" FullName like '%" + txtSearchFullName.Text + "%'");
+                }
+
+                if (txtSearchNINumber.Text.Length > 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append("and");
+                    }
+
+                    SearchStatement.Append(" NINumber like '%" + txtSearchNINumber.Text + "%'");
+                }
+
+                if (txtSearchPayDate.Text.Length > 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append("and");
+                    }
+
+                    SearchStatement.Append(" Convert(PayDate,'System.String') like '%" + txtSearchPayDate.Text + "%'");
+                }
+
+                if (cmbSearchPayMonth.SelectedIndex > 0)
+                {
+                    if (SearchStatement.Length > 0)
+                    {
+                        SearchStatement.Append("and");
+                    }
+
+                    SearchStatement.Append(" PayMonth like '%" + cmbSearchPayMonth.Text + "%'");
+                }
+
+                tblPayRecordsBindingSource.Filter = SearchStatement.ToString();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("The following error has occured:" + ex.Message, "Search Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
