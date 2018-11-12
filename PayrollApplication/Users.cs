@@ -100,6 +100,33 @@ namespace PayrollApplication
                 con.Close();
             }
         }
+
+        public void DeleteUser()
+        {
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("spDeleteCommand", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserName", UserName);
+            try
+            {
+                con.Open();
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("User Deleted Sucessfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("error:" + ex.Message, "sql Deletion error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 
 

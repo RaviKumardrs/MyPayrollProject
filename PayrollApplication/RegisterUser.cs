@@ -177,5 +177,22 @@ namespace PayrollApplication
             }
             this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
         }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user's record", "Confirm Record Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dialogResult==DialogResult.Yes)
+            {
+                users = new Users();
+                UserData();
+                if (isRegisterControlsValid())
+                {
+                    users.DeleteUser();
+                    ClearControls();
+                }
+                this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
+            }
+          
+        }
     }
 }
