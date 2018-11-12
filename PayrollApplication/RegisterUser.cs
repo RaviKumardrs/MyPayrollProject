@@ -153,5 +153,29 @@ namespace PayrollApplication
             this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
 
         }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellCollection cells = dataGridView1.CurrentRow.Cells;
+            txtRegisterUserName.Text = cells[1].Value.ToString();
+            txtRegisterPassword.Text = cells[2].Value.ToString();
+            txtConfirmPassword.Text = cells[2].Value.ToString();
+            txtRoles.Text = cells[3].Value.ToString();
+            txtDescription.Text = cells[4].Value.ToString();
+
+
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            users = new Users();
+            UserData();
+            if (isRegisterControlsValid())
+            {
+                users.UpdateUser();
+                ClearControls();
+            }
+            this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
+        }
     }
 }
