@@ -110,6 +110,7 @@
             this.btnRegisterUser.TabIndex = 0;
             this.btnRegisterUser.Text = "Register User";
             this.btnRegisterUser.UseVisualStyleBackColor = true;
+            this.btnRegisterUser.Click += new System.EventHandler(this.btnRegisterUser_Click);
             // 
             // btnUpdateUser
             // 
@@ -128,6 +129,7 @@
             this.btnReset.TabIndex = 0;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnDeleteUser
             // 

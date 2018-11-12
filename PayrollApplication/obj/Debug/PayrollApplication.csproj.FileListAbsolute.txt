@@ -28,3 +28,7 @@ E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\RdlCompile.compiled
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.AllPayments.resources
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.CurrentMonthPayment.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.Login.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.RegisterUser.resources

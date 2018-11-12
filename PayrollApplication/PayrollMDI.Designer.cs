@@ -49,6 +49,7 @@
             this.allEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentMonthPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,7 +75,8 @@
             this.payrollCalculatorToolStripMenuItem,
             this.toolStripMenuItem1,
             this.closeAllToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.registerUserToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -201,14 +203,14 @@
             // allEmployeeToolStripMenuItem
             // 
             this.allEmployeeToolStripMenuItem.Name = "allEmployeeToolStripMenuItem";
-            this.allEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allEmployeeToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.allEmployeeToolStripMenuItem.Text = "All Employee";
             this.allEmployeeToolStripMenuItem.Click += new System.EventHandler(this.allEmployeeToolStripMenuItem_Click);
             // 
             // allPaymentsToolStripMenuItem
             // 
             this.allPaymentsToolStripMenuItem.Name = "allPaymentsToolStripMenuItem";
-            this.allPaymentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allPaymentsToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.allPaymentsToolStripMenuItem.Text = "All Payments";
             this.allPaymentsToolStripMenuItem.Click += new System.EventHandler(this.allPaymentsToolStripMenuItem_Click);
             // 
@@ -218,6 +220,13 @@
             this.currentMonthPaymentToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
             this.currentMonthPaymentToolStripMenuItem.Text = "Current Month Payment";
             this.currentMonthPaymentToolStripMenuItem.Click += new System.EventHandler(this.currentMonthPaymentToolStripMenuItem_Click);
+            // 
+            // registerUserToolStripMenuItem
+            // 
+            this.registerUserToolStripMenuItem.Name = "registerUserToolStripMenuItem";
+            this.registerUserToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.registerUserToolStripMenuItem.Text = "Register User";
+            this.registerUserToolStripMenuItem.Click += new System.EventHandler(this.registerUserToolStripMenuItem_Click);
             // 
             // PayrollMDI
             // 
@@ -261,5 +270,6 @@
         private System.Windows.Forms.ToolStripMenuItem allEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentMonthPaymentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerUserToolStripMenuItem;
     }
 }

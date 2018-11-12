@@ -180,5 +180,12 @@ namespace PayrollApplication
             currentMonthPayment.MdiParent = this;
             currentMonthPayment.Visible = true;
         }
+
+        private void registerUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterUser registerUser = new RegisterUser();
+            registerUser.MdiParent = this;
+            registerUser.Show();
+        }
     }
 }
