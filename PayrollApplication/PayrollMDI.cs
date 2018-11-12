@@ -155,5 +155,30 @@ namespace PayrollApplication
             }
             
         }
+
+        private void allEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllEmployee allEmployee = new AllEmployee();
+            allEmployee.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            allEmployee.MdiParent = this;
+            allEmployee.Visible = true;
+        }
+
+        private void allPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllPayments allPayments = new AllPayments();
+            allPayments.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            allPayments.MdiParent = this;
+            allPayments.Visible = true;
+            
+        }
+
+        private void currentMonthPaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrentMonthPayment currentMonthPayment = new CurrentMonthPayment();
+            currentMonthPayment.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            currentMonthPayment.MdiParent = this;
+            currentMonthPayment.Visible = true;
+        }
     }
 }

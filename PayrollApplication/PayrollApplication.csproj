@@ -33,9 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +55,24 @@
     </Compile>
     <Compile Include="AboutPayrollSystem.Designer.cs">
       <DependentUpon>AboutPayrollSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllEmployee.Designer.cs">
+      <DependentUpon>AllEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllPayments.Designer.cs">
+      <DependentUpon>AllPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentMonthPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentMonthPayment.Designer.cs">
+      <DependentUpon>CurrentMonthPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
@@ -92,6 +113,18 @@
     <EmbeddedResource Include="AboutPayrollSystem.resx">
       <DependentUpon>AboutPayrollSystem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllEmployee.rdlc" />
+    <EmbeddedResource Include="AllEmployee.resx">
+      <DependentUpon>AllEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllPayments.rdlc" />
+    <EmbeddedResource Include="AllPayments.resx">
+      <DependentUpon>AllPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentMonthPayment.resx">
+      <DependentUpon>CurrentMonthPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentMonthPaymentrdlc.rdlc" />
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>

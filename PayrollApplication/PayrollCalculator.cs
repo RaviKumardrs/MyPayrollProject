@@ -336,6 +336,12 @@ namespace PayrollApplication
             ResetControls();
         }
 
+        private void btnGeneratePaySlip_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.Show();
+        }
+
         private void btnPrintPaySlip_Click(object sender, EventArgs e)
         {
             printDocument1.Print();
@@ -881,12 +887,6 @@ namespace PayrollApplication
             txtSearchNINumber.Text = "";
             txtSearchPayDate.Text = DateTime.Now.ToShortDateString();
             cmbSearchPayMonth.SelectedIndex = 0;
-        }
-
-        private void btnGeneratePaySlip_Click(object sender, EventArgs e)  
-        {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.Show();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

@@ -46,6 +46,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentMonthPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,34 +142,34 @@
             this.cascadeToolStripMenuItem,
             this.arrangeIconToolStripMenuItem});
             this.layoutToolStripMenuItem.Name = "layoutToolStripMenuItem";
-            this.layoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.layoutToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.layoutToolStripMenuItem.Text = "Layout";
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.tileHorizontalToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.tileVerticalToolStripMenuItem_Click);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.cascadeToolStripMenuItem.Text = "Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.cascadeToolStripMenuItem_Click);
             // 
             // arrangeIconToolStripMenuItem
             // 
             this.arrangeIconToolStripMenuItem.Name = "arrangeIconToolStripMenuItem";
-            this.arrangeIconToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.arrangeIconToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.arrangeIconToolStripMenuItem.Text = "Arrange Icon";
             this.arrangeIconToolStripMenuItem.Click += new System.EventHandler(this.arrangeIconToolStripMenuItem_Click);
             // 
@@ -187,9 +190,34 @@
             // 
             // reportingToolStripMenuItem
             // 
+            this.reportingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allEmployeeToolStripMenuItem,
+            this.allPaymentsToolStripMenuItem,
+            this.currentMonthPaymentToolStripMenuItem});
             this.reportingToolStripMenuItem.Name = "reportingToolStripMenuItem";
             this.reportingToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.reportingToolStripMenuItem.Text = "Reporting";
+            // 
+            // allEmployeeToolStripMenuItem
+            // 
+            this.allEmployeeToolStripMenuItem.Name = "allEmployeeToolStripMenuItem";
+            this.allEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allEmployeeToolStripMenuItem.Text = "All Employee";
+            this.allEmployeeToolStripMenuItem.Click += new System.EventHandler(this.allEmployeeToolStripMenuItem_Click);
+            // 
+            // allPaymentsToolStripMenuItem
+            // 
+            this.allPaymentsToolStripMenuItem.Name = "allPaymentsToolStripMenuItem";
+            this.allPaymentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.allPaymentsToolStripMenuItem.Text = "All Payments";
+            this.allPaymentsToolStripMenuItem.Click += new System.EventHandler(this.allPaymentsToolStripMenuItem_Click);
+            // 
+            // currentMonthPaymentToolStripMenuItem
+            // 
+            this.currentMonthPaymentToolStripMenuItem.Name = "currentMonthPaymentToolStripMenuItem";
+            this.currentMonthPaymentToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.currentMonthPaymentToolStripMenuItem.Text = "Current Month Payment";
+            this.currentMonthPaymentToolStripMenuItem.Click += new System.EventHandler(this.currentMonthPaymentToolStripMenuItem_Click);
             // 
             // PayrollMDI
             // 
@@ -230,5 +258,8 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allPaymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currentMonthPaymentToolStripMenuItem;
     }
 }
