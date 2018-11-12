@@ -111,6 +111,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PayrollSystemDBDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PayrollSystemDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayrollSystemDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +130,7 @@
     <Compile Include="RegisterUser.Designer.cs">
       <DependentUpon>RegisterUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs" />
     <EmbeddedResource Include="AboutPayrollSystem.resx">
       <DependentUpon>AboutPayrollSystem.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +195,17 @@
     </None>
     <None Include="PayrollSystemDBDataSet1.xss">
       <DependentUpon>PayrollSystemDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollSystemDBDataSet2.xsc">
+      <DependentUpon>PayrollSystemDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PayrollSystemDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PayrollSystemDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PayrollSystemDBDataSet2.xss">
+      <DependentUpon>PayrollSystemDBDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -12,6 +12,7 @@ namespace PayrollApplication
 {
     public partial class RegisterUser : Form
     {
+        Users users;
         public RegisterUser()
         {
             InitializeComponent();
@@ -126,12 +127,31 @@ namespace PayrollApplication
             return numberOfDigits;
         }
 
+        private void UserData()
+        {
+            users.UserName = txtRegisterUserName.Text;
+            users.Password = txtRegisterPassword.Text;
+            users.Role = txtRoles.Text;
+            users.Description = txtDescription.Text;
+        }
+
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
+            users = new Users();
+            UserData();
             if (isRegisterControlsValid())
             {
-                MessageBox.Show("Valid Data");
+                users.AddUser();
+                ClearControls();
             }
+            this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
+        }
+
+        private void RegisterUser_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'payrollSystemDBDataSet2.tblUsers' table. You can move, or remove it, as needed.
+            this.tblUsersTableAdapter.Fill(this.payrollSystemDBDataSet2.tblUsers);
+
         }
     }
 }
