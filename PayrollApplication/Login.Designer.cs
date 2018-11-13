@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -50,7 +50,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.White;
@@ -60,17 +60,18 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button1
+            // btnClose
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::PayrollApplication.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(380, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 32);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::PayrollApplication.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(381, 1);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 22);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
@@ -100,7 +101,7 @@
             this.rectangleShape3,
             this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(411, 548);
+            this.shapeContainer1.Size = new System.Drawing.Size(407, 544);
             this.shapeContainer1.TabIndex = 1;
             this.shapeContainer1.TabStop = false;
             // 
@@ -110,7 +111,7 @@
             this.rectangleShape3.BorderWidth = 3;
             this.rectangleShape3.Location = new System.Drawing.Point(185, 389);
             this.rectangleShape3.Name = "rectangleShape3";
-            this.rectangleShape3.Size = new System.Drawing.Size(169, 23);
+            this.rectangleShape3.Size = new System.Drawing.Size(169, 28);
             // 
             // rectangleShape2
             // 
@@ -118,7 +119,7 @@
             this.rectangleShape2.BorderWidth = 3;
             this.rectangleShape2.Location = new System.Drawing.Point(183, 334);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(169, 23);
+            this.rectangleShape2.Size = new System.Drawing.Size(169, 28);
             // 
             // rectangleShape1
             // 
@@ -144,26 +145,27 @@
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Location = new System.Drawing.Point(185, 291);
+            this.txtUserName.Location = new System.Drawing.Point(193, 291);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(168, 13);
+            this.txtUserName.Size = new System.Drawing.Size(158, 13);
             this.txtUserName.TabIndex = 3;
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Location = new System.Drawing.Point(184, 337);
+            this.txtPassword.Location = new System.Drawing.Point(193, 343);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
-            this.txtPassword.Size = new System.Drawing.Size(168, 13);
+            this.txtPassword.Size = new System.Drawing.Size(158, 13);
             this.txtPassword.TabIndex = 4;
             // 
             // cmbRoles
             // 
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(185, 389);
+            this.cmbRoles.Location = new System.Drawing.Point(185, 392);
+            this.cmbRoles.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.cmbRoles.Name = "cmbRoles";
-            this.cmbRoles.Size = new System.Drawing.Size(167, 21);
+            this.cmbRoles.Size = new System.Drawing.Size(169, 21);
             this.cmbRoles.TabIndex = 5;
             // 
             // lblUserName
@@ -200,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 548);
+            this.ClientSize = new System.Drawing.Size(407, 544);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -233,7 +235,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape3;

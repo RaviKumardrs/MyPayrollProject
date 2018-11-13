@@ -187,5 +187,21 @@ namespace PayrollApplication
             registerUser.MdiParent = this;
             registerUser.Show();
         }
+
+        private void PayrollMDI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure want to exit the application", "Form Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
+            else
+            {
+                e.Cancel = false;
+                Login login = new Login();
+                login.Visible = true;
+            }
+        }
     }
 }

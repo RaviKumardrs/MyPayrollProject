@@ -27,21 +27,11 @@ namespace PayrollApplication
             users.Role = cmbRoles.Text;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            GetRoles();
-        }
-
         private void GetRoles()
         {
             string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(cs);
-            SqlCommand cmd = new SqlCommand("spAllUsers",con);
+            SqlCommand cmd = new SqlCommand("spAllUsers", con);
             cmd.CommandType = CommandType.StoredProcedure;
             try
             {
@@ -63,6 +53,16 @@ namespace PayrollApplication
                 con.Close();
             }
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            GetRoles();
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
@@ -95,6 +95,11 @@ namespace PayrollApplication
            
 
            
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

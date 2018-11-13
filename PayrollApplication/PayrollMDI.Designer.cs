@@ -35,6 +35,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageEmployeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.payrollCalculatorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.allEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentMonthPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registerUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +113,13 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // registerUserToolStripMenuItem
+            // 
+            this.registerUserToolStripMenuItem.Name = "registerUserToolStripMenuItem";
+            this.registerUserToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.registerUserToolStripMenuItem.Text = "Register User";
+            this.registerUserToolStripMenuItem.Click += new System.EventHandler(this.registerUserToolStripMenuItem_Click);
             // 
             // manageEmployeeToolStripMenuItem1
             // 
@@ -221,13 +228,6 @@
             this.currentMonthPaymentToolStripMenuItem.Text = "Current Month Payment";
             this.currentMonthPaymentToolStripMenuItem.Click += new System.EventHandler(this.currentMonthPaymentToolStripMenuItem_Click);
             // 
-            // registerUserToolStripMenuItem
-            // 
-            this.registerUserToolStripMenuItem.Name = "registerUserToolStripMenuItem";
-            this.registerUserToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.registerUserToolStripMenuItem.Text = "Register User";
-            this.registerUserToolStripMenuItem.Click += new System.EventHandler(this.registerUserToolStripMenuItem_Click);
-            // 
             // PayrollMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +240,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payroll MDI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PayrollMDI_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
