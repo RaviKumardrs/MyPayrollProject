@@ -32,3 +32,7 @@ E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.Login.resources
 E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.RegisterUser.resources
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\PayrollApplication.exe.manifest
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\bin\Debug\PayrollApplication.application
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.exe.manifest
+E:\Project Windows Form\PayrollApplicationSolution\PayrollApplication\obj\Debug\PayrollApplication.application
