@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSignIn = new System.Windows.Forms.Button();
-            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape3 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.btnSignIn = new System.Windows.Forms.Button();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,27 +58,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 252);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // shapeContainer1
+            // button1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.rectangleShape3,
-            this.rectangleShape2,
-            this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(415, 552);
-            this.shapeContainer1.TabIndex = 1;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.rectangleShape1.BorderWidth = 3;
-            this.rectangleShape1.Location = new System.Drawing.Point(184, 284);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(169, 28);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::PayrollApplication.Properties.Resources.close;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(380, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 32);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -89,6 +81,52 @@
             this.label1.Size = new System.Drawing.Size(288, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "PAYROLL LOGIN";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PayrollApplication.Properties.Resources.login1;
+            this.pictureBox1.Location = new System.Drawing.Point(157, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 107);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape3,
+            this.rectangleShape2,
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(411, 548);
+            this.shapeContainer1.TabIndex = 1;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape3
+            // 
+            this.rectangleShape3.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.rectangleShape3.BorderWidth = 3;
+            this.rectangleShape3.Location = new System.Drawing.Point(185, 389);
+            this.rectangleShape3.Name = "rectangleShape3";
+            this.rectangleShape3.Size = new System.Drawing.Size(169, 23);
+            // 
+            // rectangleShape2
+            // 
+            this.rectangleShape2.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.rectangleShape2.BorderWidth = 3;
+            this.rectangleShape2.Location = new System.Drawing.Point(183, 334);
+            this.rectangleShape2.Name = "rectangleShape2";
+            this.rectangleShape2.Size = new System.Drawing.Size(169, 23);
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.rectangleShape1.BorderWidth = 3;
+            this.rectangleShape1.Location = new System.Drawing.Point(184, 284);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(169, 28);
             // 
             // btnSignIn
             // 
@@ -101,22 +139,7 @@
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
-            // 
-            // rectangleShape2
-            // 
-            this.rectangleShape2.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.rectangleShape2.BorderWidth = 3;
-            this.rectangleShape2.Location = new System.Drawing.Point(183, 334);
-            this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(169, 23);
-            // 
-            // rectangleShape3
-            // 
-            this.rectangleShape3.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.rectangleShape3.BorderWidth = 3;
-            this.rectangleShape3.Location = new System.Drawing.Point(185, 389);
-            this.rectangleShape3.Name = "rectangleShape3";
-            this.rectangleShape3.Size = new System.Drawing.Size(169, 23);
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // txtUserName
             // 
@@ -173,32 +196,11 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Roles :";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::PayrollApplication.Properties.Resources.close;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(380, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 32);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PayrollApplication.Properties.Resources.login1;
-            this.pictureBox1.Location = new System.Drawing.Point(157, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 107);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 552);
+            this.ClientSize = new System.Drawing.Size(411, 548);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -218,6 +220,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

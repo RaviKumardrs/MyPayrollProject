@@ -127,6 +127,35 @@ namespace PayrollApplication
                 con.Close();
             }
         }
+
+        public bool AuthorizeUser()
+        {
+            bool IsUserAuthorized = false;
+            string cs = ConfigurationManager.ConnectionStrings["PayrollSystemDBConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand("spIsUserDetailsValid", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserName",UserName);
+            cmd.Parameters.AddWithValue("@Password",Password);
+            cmd.Parameters.AddWithValue("@Roles",Role);
+            try
+            {
+                con.Open();
+                IsUserAuthorized= (bool)cmd.ExecuteScalar();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message, "User Authenticated Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                con.Close();
+            }
+
+            return IsUserAuthorized;
+        }
     }
 
 
